@@ -38,6 +38,8 @@ public class AddNewUser: ZUsecase<AddNewUserRequest, AddnewUserResponse, AddNewU
     }
     
     public override func run(request: AddNewUserRequest, success: @escaping (AddnewUserResponse) -> Void, failure: @escaping (AddNewUserError) -> Void) {
+        
+        print("in addNewUser Usecase \n\n")
         dataManager.addUser(user: request.user) { [weak self] () in
             self?.success(callback: success)
         } failure: { [weak self] (error) in

@@ -6,6 +6,12 @@
 //
 
 import Foundation
+import SQLite3
+import VTComponents
+
+//public class UserDatabase {
+//
+//}
 
 public class UserDatabase {
     

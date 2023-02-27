@@ -16,6 +16,8 @@ public class AddUserDatamanager: AddUserDataContract {
     }
     
     public func addUser(user: User, success: @escaping () -> Void, failure: @escaping (AddNewUserError) -> Void) {
+        
+        print("In addUser DatamManager \n\n")
         database.addUser(user: user) { [weak self] () in
             self?.success(callback: success)
         } failure: {

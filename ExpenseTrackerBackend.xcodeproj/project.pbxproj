@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		2AA2454A29A8A2F4007BBE2D /* ExpenseTrackerBackend.h in Headers */ = {isa = PBXBuildFile; fileRef = 2AA2454929A8A2F4007BBE2D /* ExpenseTrackerBackend.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2AA2456C29A8A630007BBE2D /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA2456B29A8A630007BBE2D /* Database.swift */; };
-		2AA2456E29A8A657007BBE2D /* CreateUserDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA2456D29A8A657007BBE2D /* CreateUserDatabase.swift */; };
+		2AA2456E29A8A657007BBE2D /* UserDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA2456D29A8A657007BBE2D /* UserDatabase.swift */; };
 		2AA2457029A8A661007BBE2D /* AddUserDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA2456F29A8A661007BBE2D /* AddUserDatabase.swift */; };
 		2AA2457529A8A6B9007BBE2D /* UserSignInDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA2457429A8A6B9007BBE2D /* UserSignInDataManager.swift */; };
 		2AA2457729A8A6C8007BBE2D /* UserSignUpDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA2457629A8A6C8007BBE2D /* UserSignUpDataManager.swift */; };
@@ -18,10 +18,11 @@
 		2AA2458029A8A76D007BBE2D /* UserSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA2457F29A8A76D007BBE2D /* UserSignIn.swift */; };
 		2AA2458229A8A77A007BBE2D /* UserSignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA2458129A8A77A007BBE2D /* UserSignUp.swift */; };
 		2AA2458429A8A784007BBE2D /* UserSignOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA2458329A8A784007BBE2D /* UserSignOut.swift */; };
-		2AA2458729A8A7ED007BBE2D /* AddUserContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA2458629A8A7ED007BBE2D /* AddUserContract.swift */; };
+		2AA2458729A8A7ED007BBE2D /* UserDataContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA2458629A8A7ED007BBE2D /* UserDataContract.swift */; };
 		2AA2458929ACAF75007BBE2D /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA2458829ACAF75007BBE2D /* Transaction.swift */; };
 		2AA2458B29ACAF7E007BBE2D /* Analysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA2458A29ACAF7E007BBE2D /* Analysis.swift */; };
 		2AA2458D29ACAF88007BBE2D /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA2458C29ACAF88007BBE2D /* Category.swift */; };
+		2AADAFE329AF3C8A00F7962D /* GetUserDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AADAFE229AF3C8A00F7962D /* GetUserDatabase.swift */; };
 		2AD9238D29ACC1F4009F206D /* AddTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD9238C29ACC1F4009F206D /* AddTransaction.swift */; };
 		2AD9238F29ACC201009F206D /* GetAllTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD9238E29ACC201009F206D /* GetAllTransaction.swift */; };
 		2AD9239129ACC213009F206D /* GetTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD9239029ACC213009F206D /* GetTransaction.swift */; };
@@ -44,7 +45,7 @@
 		2AA2454629A8A2F4007BBE2D /* ExpenseTrackerBackend.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ExpenseTrackerBackend.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AA2454929A8A2F4007BBE2D /* ExpenseTrackerBackend.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExpenseTrackerBackend.h; sourceTree = "<group>"; };
 		2AA2456B29A8A630007BBE2D /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
-		2AA2456D29A8A657007BBE2D /* CreateUserDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserDatabase.swift; sourceTree = "<group>"; };
+		2AA2456D29A8A657007BBE2D /* UserDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDatabase.swift; sourceTree = "<group>"; };
 		2AA2456F29A8A661007BBE2D /* AddUserDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserDatabase.swift; sourceTree = "<group>"; };
 		2AA2457429A8A6B9007BBE2D /* UserSignInDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSignInDataManager.swift; sourceTree = "<group>"; };
 		2AA2457629A8A6C8007BBE2D /* UserSignUpDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSignUpDataManager.swift; sourceTree = "<group>"; };
@@ -53,10 +54,11 @@
 		2AA2457F29A8A76D007BBE2D /* UserSignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSignIn.swift; sourceTree = "<group>"; };
 		2AA2458129A8A77A007BBE2D /* UserSignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSignUp.swift; sourceTree = "<group>"; };
 		2AA2458329A8A784007BBE2D /* UserSignOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSignOut.swift; sourceTree = "<group>"; };
-		2AA2458629A8A7ED007BBE2D /* AddUserContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserContract.swift; sourceTree = "<group>"; };
+		2AA2458629A8A7ED007BBE2D /* UserDataContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataContract.swift; sourceTree = "<group>"; };
 		2AA2458829ACAF75007BBE2D /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		2AA2458A29ACAF7E007BBE2D /* Analysis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analysis.swift; sourceTree = "<group>"; };
 		2AA2458C29ACAF88007BBE2D /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		2AADAFE229AF3C8A00F7962D /* GetUserDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserDatabase.swift; sourceTree = "<group>"; };
 		2AD9238C29ACC1F4009F206D /* AddTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransaction.swift; sourceTree = "<group>"; };
 		2AD9238E29ACC201009F206D /* GetAllTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllTransaction.swift; sourceTree = "<group>"; };
 		2AD9239029ACC213009F206D /* GetTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTransaction.swift; sourceTree = "<group>"; };
@@ -172,8 +174,9 @@
 		2AA2456A29A8A61E007BBE2D /* UserDatabase */ = {
 			isa = PBXGroup;
 			children = (
-				2AA2456D29A8A657007BBE2D /* CreateUserDatabase.swift */,
+				2AA2456D29A8A657007BBE2D /* UserDatabase.swift */,
 				2AA2456F29A8A661007BBE2D /* AddUserDatabase.swift */,
+				2AADAFE229AF3C8A00F7962D /* GetUserDatabase.swift */,
 			);
 			path = UserDatabase;
 			sourceTree = "<group>";
@@ -235,7 +238,7 @@
 		2AA2458529A8A7D9007BBE2D /* UserContract */ = {
 			isa = PBXGroup;
 			children = (
-				2AA2458629A8A7ED007BBE2D /* AddUserContract.swift */,
+				2AA2458629A8A7ED007BBE2D /* UserDataContract.swift */,
 			);
 			path = UserContract;
 			sourceTree = "<group>";
@@ -419,20 +422,21 @@
 				2AD923A429ACC311009F206D /* AddMonthlyAnalysis.swift in Sources */,
 				2AD9239529ACC27F009F206D /* GetMonthTransaction.swift in Sources */,
 				2AD923A729ACC33D009F206D /* GetCategory.swift in Sources */,
-				2AA2458729A8A7ED007BBE2D /* AddUserContract.swift in Sources */,
+				2AA2458729A8A7ED007BBE2D /* UserDataContract.swift in Sources */,
 				2AD923A929ACC35A009F206D /* AddCategory.swift in Sources */,
 				2AA2458929ACAF75007BBE2D /* Transaction.swift in Sources */,
 				2AD923A229ACC2F9009F206D /* GetTransation.swift in Sources */,
 				2AA2457729A8A6C8007BBE2D /* UserSignUpDataManager.swift in Sources */,
 				2AD9239129ACC213009F206D /* GetTransaction.swift in Sources */,
 				2AA2458229A8A77A007BBE2D /* UserSignUp.swift in Sources */,
+				2AADAFE329AF3C8A00F7962D /* GetUserDatabase.swift in Sources */,
 				2AA2457029A8A661007BBE2D /* AddUserDatabase.swift in Sources */,
 				2AD9238D29ACC1F4009F206D /* AddTransaction.swift in Sources */,
 				2AA2458029A8A76D007BBE2D /* UserSignIn.swift in Sources */,
 				2AA2456C29A8A630007BBE2D /* Database.swift in Sources */,
 				2AA2457529A8A6B9007BBE2D /* UserSignInDataManager.swift in Sources */,
 				2AA2457929A8A6F7007BBE2D /* UserDataManagerContract.swift in Sources */,
-				2AA2456E29A8A657007BBE2D /* CreateUserDatabase.swift in Sources */,
+				2AA2456E29A8A657007BBE2D /* UserDatabase.swift in Sources */,
 				2AD923A029ACC2E8009F206D /* GetYearlyAnalysis.swift in Sources */,
 				2AA2457E29A8A744007BBE2D /* User.swift in Sources */,
 				2AA2458D29ACAF88007BBE2D /* Category.swift in Sources */,

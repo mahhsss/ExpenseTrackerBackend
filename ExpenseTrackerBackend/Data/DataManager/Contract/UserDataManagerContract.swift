@@ -14,5 +14,5 @@ public protocol AddUserDatabaseContract {
 
 public protocol GetUserDatabaseContract {
     
-    func getUser(success: @escaping ([User]) -> Void, failure: @escaping () -> Void)
+    func getUser(emailId: String, password: String, response: @escaping (User) -> Void, failure: @escaping (Error) -> Void )
 }

@@ -19,7 +19,7 @@ public class AddNewUserRequest: ZRequest {
 
 public class AddnewUserResponse: ZResponse {
     
-    public let message : String
+    public let message: String
     init(message: String) {
         self.message = message
     }

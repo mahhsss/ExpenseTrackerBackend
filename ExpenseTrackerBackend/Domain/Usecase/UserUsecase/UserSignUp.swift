@@ -19,13 +19,20 @@ public class AddNewUserRequest: ZRequest {
 
 public class AddnewUserResponse: ZResponse {
     
-    public override init() {
-        
+    public let message : String
+    init(message: String) {
+        self.message = message
     }
 }
 
 public class AddNewUserError: ZError {
     
+    public let error: Error
+    public init(error: Error) {
+        self.error = error
+        super.init(status: .unknownError)
+    }
+
 }
 
 public class AddNewUser: ZUsecase<AddNewUserRequest, AddnewUserResponse, AddNewUserError> {
@@ -39,21 +46,21 @@ public class AddNewUser: ZUsecase<AddNewUserRequest, AddnewUserResponse, AddNewU
     
     public override func run(request: AddNewUserRequest, success: @escaping (AddnewUserResponse) -> Void, failure: @escaping (AddNewUserError) -> Void) {
         
-        print("in addNewUser Usecase \n\n")
-        dataManager.addUser(user: request.user) { [weak self] () in
-            self?.success(callback: success)
+        dataManager.addUser(user: request.user) { [weak self] (response) in
+            self?.success(callback: success, response: response)
         } failure: { [weak self] (error) in
             self?.failure(error: error, callback: failure)
         }
 
     }
     
-    func success(callback: @escaping (AddnewUserResponse) -> Void) {
-        self.response = AddnewUserResponse()
+    func success(callback: @escaping (AddnewUserResponse) -> Void, response: String) {
+        self.response = AddnewUserResponse(message: response)
         invokeSuccess(callback: callback, response: self.response!)
     }
     
-    func failure(error: AddNewUserError, callback: @escaping (AddNewUserError) -> Void) {
+    func failure(error: Error, callback: @escaping (AddNewUserError) -> Void) {
+        let error = AddNewUserError(error: error)
         invokeFailure(callback: callback, failure: error)
     }
 }

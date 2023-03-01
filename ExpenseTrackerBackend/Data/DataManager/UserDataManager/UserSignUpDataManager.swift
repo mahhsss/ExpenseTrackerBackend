@@ -15,23 +15,22 @@ public class AddUserDatamanager: AddUserDataContract {
         self.database = database
     }
     
-    public func addUser(user: User, success: @escaping () -> Void, failure: @escaping (AddNewUserError) -> Void) {
+    public func addUser(user: User, success: @escaping (String) -> Void, failure: @escaping (Error) -> Void) {
         
-        print("In addUser DatamManager \n\n")
-        database.addUser(user: user) { [weak self] () in
-            self?.success(callback: success)
-        } failure: {
-            self.failure(callback: failure)
+        database.addUser(user: user) { [weak self] (response) in
+            self?.success(callback: success, response: response)
+        } failure: { [weak self] (error) in
+            self?.failure(callback: failure, error: error)
         }
 
     }
     
-    private func success(callback: () -> Void) {
-        callback()
+    
+    private func success(callback: (String) -> Void, response: String) {
+        callback(response)
     }
     
-    private func failure(callback: ((AddNewUserError) -> Void)) {
-        let error = AddNewUserError(type: .invalidRequestError)
+    private func failure(callback: @escaping (Error) -> Void, error: Error) {
         callback(error)
     }
     

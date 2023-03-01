@@ -34,18 +34,25 @@ public class Database {
         }
     }
     
-    private init(dbPointer: OpaquePointer) {
-        self.dbPointer = dbPointer
-        do {
-            var filePath = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
-            filePath.append(path: "ExpenseTracker")
-            try FileManager.default.createDirectory(at: filePath, withIntermediateDirectories: true,attributes: [:])
-            filePath.append(path: "User.sqlite")
-            Database.filepath = filePath.path()
-            print(" \n\n\n \(Database.filepath)\n \(filePath) \n\n\n")
-
-        } catch let error {
-            print("   -*- \(error) -*-   ")
+    init() {
+        
+        if dbPointer == nil {
+            do {
+                var filePath = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+                filePath.append(path: "ExpenseTracker")
+                try FileManager.default.createDirectory(at: filePath, withIntermediateDirectories: true,attributes: [:])
+                filePath.append(path: "User.sqlite")
+                Database.filepath = filePath.path()
+                if sqlite3_open(Database.filepath, &dbPointer) == SQLITE_OK {
+                    if dbPointer != nil {
+                        print("            Opened DB \n")
+                    }
+                }
+                
+            } catch let error {
+                print("   -*- \(error) -*-   ")
+            }
+            
         }
     }
     
@@ -54,23 +61,9 @@ public class Database {
         sqlite3_close_v2(dbPointer)
     }
     
-    
-    
-    static func openDatabase() -> Database {
-        
-        var db: OpaquePointer?
+}
 
-        if sqlite3_open(filepath, &db) == SQLITE_OK {
-            if let db = db {
-                print("Opened DB \(self.filepath)")
-                return Database(dbPointer: db)
-            }
-        }
-        else {
-            print("Error in creating Database")
-        }
-        return Database(dbPointer: db!)
-    }
+extension Database {
     
     private func prepareStatement(query: String) -> OpaquePointer? {
 
@@ -78,7 +71,7 @@ public class Database {
         if sqlite3_prepare_v2(dbPointer, query, -1, &statementPointer, nil) == SQLITE_OK {
             return statementPointer
         } else {
-            print("Error in preparing the statement")
+            print("            Error in preparing the statement")
         }
         return statementPointer
     }
@@ -101,7 +94,7 @@ public class Database {
         let tableQuery = "CREATE TABLE IF NOT EXISTS " + tableName + " (" + tableTypes.dropLast(2) + ")"
         let createTableStatement = prepareStatement(query: tableQuery)
         if sqlite3_step(createTableStatement) == SQLITE_DONE {
-            print("Created Table")
+            print("            Created Table \n")
         } else {
             print("Error in creating Table")
         }
@@ -110,7 +103,6 @@ public class Database {
     
     func addValue(tableName: String, columns: [Column], values: [String: Any]) -> Bool {
         
-        print("In Adding data in the table part \n\n")
         var columnNames: String = ""
         var columnValue: String = ""
         for column in columns {
@@ -128,91 +120,13 @@ public class Database {
         let query = "INSERT INTO " +  tableName + "(\(columnNames.dropLast(2))) " + " VALUES(\(columnValue.dropLast(2)))"
         let createTableStatement = prepareStatement(query: query)
         if sqlite3_step(createTableStatement) == SQLITE_DONE {
-            print("values added")
+            print("            values added \n")
             return true
         } else {
-            print("Error in creating Table")
+            print("\(String(describing: sqlite3_errmsg(dbPointer)))")
             return false
         }
     }
     
 }
 
-
-//public class Database {
-//
-//    var dbPointer: OpaquePointer?
-//    var shared = Database()
-//    static var filepath = ""
-//
-//    private init()
-//    {
-//        createDatabase()
-//        createUserTable()
-//    }
-//
-//    private func createDatabase() {
-//
-//        do {
-//            var filePath = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
-//            filePath.append(path: "ExpenseTracker")
-//            try FileManager.default.createDirectory(at: filePath, withIntermediateDirectories: true,attributes: [:])
-//            filePath.append(path: "User.sqlite")
-//            Database.filepath = filePath.path()
-//
-//        } catch let error {
-//            print("   -*- \(error) -*-   ")
-//        }
-//
-//        var db: OpaquePointer?
-//
-//        if sqlite3_open(Database.filepath, &db) == SQLITE_OK {
-//            print("Opened DB \(Database.filepath)")
-//            if let db = db {
-//                dbPointer = db
-//            }
-//        }
-//        else {
-//            print("Error in creating Database")
-//        }
-//
-//    }
-//
-//    public func prepareStatement(query: String) -> OpaquePointer? {
-//
-//        var statementPointer: OpaquePointer?
-//        if sqlite3_prepare(dbPointer, query, -1, &statementPointer, nil) == SQLITE_OK {
-//            return statementPointer
-//        } else {
-//            print("Error In Prepare Statement")
-//        }
-//        return nil
-//    }
-//
-//    private func createTable(querry: String) {
-//
-//        let createTableStatement = prepareStatement(query: querry)
-//        if sqlite3_step(createTableStatement) == SQLITE_DONE {
-//            return
-//        }
-//        else {
-//            print("Error In Table Creation")
-//        }
-//    }
-//
-//    private func createUserTable() {
-//
-//        let userTableQuerry = """
-//        CREATE TABLE IF NOT EXISTS "User" (
-//            "userId"    INTEGER,
-//            "name"    TEXT,
-//            "emailId"    TEXT,
-//            "password"    TEXT,
-//            PRIMARY KEY("userId" AUTOINCREMENT)
-//        )
-//        """
-//        createTable(querry: userTableQuerry)
-//    }
-//
-//
-//}

@@ -37,7 +37,7 @@ public class UserDatabase {
             let instance = Column(name: columnName[index], type: columnType[index], primaryKey: isPrimaryKey, autoIncrement: isAutoIncrement)
             self.userDatabaseColumn.append(instance)
         }
-        database =  Database.openDatabase()
+        database =  Database()
         database.createTable(tableName: "User", columns: userDatabaseColumn)
     }
 }

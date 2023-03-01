@@ -9,7 +9,7 @@ import Foundation
 
 public protocol AddUserDatabaseContract {
     
-    func addUser(user: User, success: @escaping () -> Void, failure: @escaping () -> Void)
+    func addUser(user: User, success: @escaping (String) -> Void, failure: @escaping (Error) -> Void)
 }
 
 public protocol GetUserDatabaseContract {

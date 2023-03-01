@@ -8,5 +8,5 @@
 import Foundation
 
 public protocol AddUserDataContract {
-    func addUser(user: User, success: @escaping () -> Void, failure: @escaping (AddNewUserError) -> Void)
+    func addUser(user: User, success: @escaping (String) -> Void, failure: @escaping (Error) -> Void)
 }

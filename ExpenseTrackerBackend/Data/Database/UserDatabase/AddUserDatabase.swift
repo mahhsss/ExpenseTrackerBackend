@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import VTComponents
 
 public class AddUserDataDatabaseService: UserDatabase {
    
@@ -14,23 +15,20 @@ public class AddUserDataDatabaseService: UserDatabase {
 }
 
 extension AddUserDataDatabaseService: AddUserDatabaseContract {
-   
-    public func addUser(user: User, success: @escaping () -> Void, failure: @escaping () -> Void) {
-        var value: [String: Any] = [:]
+    public func addUser(user: User, success: @escaping (String) -> Void, failure: @escaping (Error) -> Void) {
         
-        print("In adduser Database \n\n")
+        var value: [String: Any] = [:]
         value["userId"] = user.userId
         value["name"] = user.name
         value["emailId"] = user.emailId
         value["password"] = user.password
-        print("\n\n\n\n in add user \(value)\n\n\n\n")
         let result = database.addValue(tableName: "User", columns: userDatabaseColumn, values: value)
         
         if result {
-            success()
+            success("User Added Successfully")
         }
         else {
-            failure()
+            failure(ZErrorType.signupFailed)
         }
     }
     

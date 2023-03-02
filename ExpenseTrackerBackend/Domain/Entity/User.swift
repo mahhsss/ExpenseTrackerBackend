@@ -10,8 +10,8 @@ import Foundation
 public struct User {
     
     var userId: Int
-    var name: String
-    var emailId: String
+    public var name: String
+    public var emailId: String
     var password: String
     
     public init(userId: Int, name: String, emailId: String, password: String) {

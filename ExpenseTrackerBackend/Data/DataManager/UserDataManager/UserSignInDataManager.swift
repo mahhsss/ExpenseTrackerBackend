@@ -9,20 +9,25 @@ import Foundation
 
 public class UserLoginDataManagerServise: UserLoginDataContract {
     
-    var database: UserLoginDataContract
+    var database: GetUserDatabaseContract
     
-    public init(database: UserLoginDataContract) {
+    public init(database: GetUserDatabaseContract) {
         self.database = database
     }
-    public func userLogin(emailId: String, password: String, response: @escaping (User) -> Void, failure: @escaping (Error) -> Void) {
-        database.userLogin(emailId: emailId, password: password, response: <#T##(User) -> Void#>, failure: <#T##(Error) -> Void#>)
+    public func userLogin(emailId: String, password: String, success: @escaping (User) -> Void, failure: @escaping (Error) -> Void) {
+        database.getUser(emailId: emailId, password: password) { [weak self] (response) in
+            self?.success(callback: success, response: response)
+        } failure: { [weak self] error in
+            self?.failure(callback: failure, error: error)
+        }
+
     }
     
     func success(callback: (User) -> Void, response: User) {
         callback(response)
     }
     
-    func failure(callback: @escaping (Error) -> Void, error: Error) {
+    func failure(callback: (Error) -> Void, error: Error) {
         callback(error)
     }
 }

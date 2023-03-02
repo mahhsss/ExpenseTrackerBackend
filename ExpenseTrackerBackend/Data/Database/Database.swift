@@ -133,18 +133,16 @@ extension Database {
         if columnName != "" {
             query += " WHERE " + columnName + " = \"" + columnValue + "\""
         }
-//        print(query)
         var selectStatement: OpaquePointer?
-        let result: [String: Any] = [:]
+        var result: [String: Any] = [:]
         if sqlite3_prepare(self.dbPointer, query, -1, &selectStatement, nil) == SQLITE_OK {
-            while sqlite3_step(selectStatement) == SQLITE_ROW {
-                var rowValue: [String: Any] = [: ]
+            if sqlite3_step(selectStatement) == SQLITE_ROW {
                 for (index,col) in column.enumerated() {
                     if col.type == "integer" {
-                        rowValue[col.name] = Int(sqlite3_column_int(selectStatement, Int32(index)))
+                        result[col.name] = Int(sqlite3_column_int(selectStatement, Int32(index)))
                     }
                     else if col.type == "text" {
-                        rowValue[col.name] = String(cString: sqlite3_column_text(selectStatement, Int32(index))!)
+                        result[col.name] = String(cString: sqlite3_column_text(selectStatement, Int32(index))!)
                     }
                 }
             }

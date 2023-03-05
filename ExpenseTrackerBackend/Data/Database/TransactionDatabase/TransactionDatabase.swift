@@ -1,27 +1,21 @@
 //
-//  CreateUserDatabase.swift
+//  TransactionDatabase.swift
 //  ExpenseTrackerBackend
 //
-//  Created by mahesh-pt6305 on 24/02/23.
+//  Created by mahesh-pt6305 on 02/03/23.
 //
 
 import Foundation
-import SQLite3
-import VTComponents
 
-//public class UserDatabase {
-//
-//}
-
-public class UserDatabase {
+public class TransactionDatabase {
     
-    let columnName: [String] = ["userId", "name", "emailId", "password"]
-    let columnType: [String] = ["integer", "text", "text", "text"]
-    let primaryKey: [String] = ["userId"]
-    let autoIncrement: [String] = ["userId"]
-    let uniqueKey: [String] = ["emailId"]
+    let columnName: [String] = ["transactionId", "userId", "amount", "transactionType", "currencyType", "date", "category", "note"]
+    let columnType: [String] = ["integer", "integer", "integer", "text", "text", "text", "text", "text"]
+    let primaryKey: [String] = ["transactionId"]
+    let autoIncrement: [String] = ["transactionId"]
+    let uniqueKey: [String] = []
     let database: Database
-    public var userDatabaseColumn: [Column] = []
+    public var transactionDatabaseColumn: [Column] = []
     
     init() {
         
@@ -40,9 +34,9 @@ public class UserDatabase {
                 isUniqueKey = true
             }
             let instance = Column(name: columnName[index], type: columnType[index], primaryKey: isPrimaryKey, autoIncrement: isAutoIncrement, uniqueKey: isUniqueKey)
-            self.userDatabaseColumn.append(instance)
+            self.transactionDatabaseColumn.append(instance)
         }
-        database =  Database()
-        database.createTable(tableName: "User", columns: userDatabaseColumn)
+        database = Database()
+        database.createTable(tableName: "Transaction", columns: transactionDatabaseColumn)
     }
 }

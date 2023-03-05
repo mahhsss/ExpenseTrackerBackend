@@ -30,6 +30,7 @@ extension AddUserDataDatabaseService: AddUserDatabaseContract {
         else {
             failure(ZErrorType.signupFailed)
         }
+        
     }
     
 }

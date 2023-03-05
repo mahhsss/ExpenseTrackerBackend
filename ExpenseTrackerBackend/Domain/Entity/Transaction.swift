@@ -7,23 +7,36 @@
 
 import Foundation
 
-enum CurrencyType {
-    case cash
-    case bankTransaction
+public enum CurrencyType: String {
+    case cash = "Cash"
+    case bankTransaction = "Bank"
 }
 
-enum TransactionType {
-    case spending
-    case income
+public enum TransactionType: String {
+    case spending = "Spending"
+    case income = "Income"
 }
 
 public struct Transaction {
     
-    var transactionId: String
+    var transactionId: Int
     var userId: Int
     var amount: Int
     var transactionType: TransactionType
     var currencyType: CurrencyType
-    var date: Date
-    var note: String
+    var date: String
+    var category: String
+    var note: String?
+    
+    
+    public init(transactionId: Int, userId: Int, amount: Int, transactionType: TransactionType, currencyType: CurrencyType, date: String, category: String, note: String? = nil) {
+        self.transactionId = transactionId
+        self.userId = userId
+        self.amount = amount
+        self.transactionType = transactionType
+        self.currencyType = currencyType
+        self.date = date
+        self.category = category
+        self.note = note
+    }
 }

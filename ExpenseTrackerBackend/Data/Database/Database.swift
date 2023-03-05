@@ -15,6 +15,7 @@ public struct Column {
     let type: String
     var primaryKey: Bool = false
     var autoIncrement: Bool = false
+    var uniqueKey: Bool = false
 }
 
 public class Database {
@@ -56,10 +57,10 @@ public class Database {
         }
     }
     
-    deinit {
-        print("Closing DB")
-        sqlite3_close_v2(dbPointer)
-    }
+//    deinit {
+//        print("Closing DB")
+//        sqlite3_close_v2(dbPointer)
+//    }
     
 }
 
@@ -86,12 +87,13 @@ extension Database {
             if column.autoIncrement == true {
                 tableTypes += " AUTOINCREMENT"
             }
+            if column.uniqueKey == true {
+                tableTypes += " UNIQUE"
+            }
             tableTypes += ", "
-            
-            
-            
         }
         let tableQuery = "CREATE TABLE IF NOT EXISTS " + tableName + " (" + tableTypes.dropLast(2) + ")"
+        print("\n\n\n\n\n\(tableQuery)\n\n\n\n\n")
         let createTableStatement = prepareStatement(query: tableQuery)
         if sqlite3_step(createTableStatement) == SQLITE_DONE {
             print("            Created Table \n")
@@ -123,7 +125,6 @@ extension Database {
             print("            values added \n")
             return true
         } else {
-            print("\(String(describing: sqlite3_errmsg(dbPointer)))")
             return false
         }
     }

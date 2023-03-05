@@ -19,7 +19,7 @@ public class AddNewUserRequest: ZRequest {
 
 public class AddnewUserResponse: ZResponse {
     
-    public let message: String
+    public let message : String
     init(message: String) {
         self.message = message
     }
@@ -38,7 +38,6 @@ public class AddNewUserError: ZError {
 public class AddNewUser: ZUsecase<AddNewUserRequest, AddnewUserResponse, AddNewUserError> {
     
     var dataManager: AddUserDataContract
-    public var response: AddnewUserResponse?
     
     public init(dataManager: AddUserDataContract) {
         self.dataManager = dataManager
@@ -55,8 +54,7 @@ public class AddNewUser: ZUsecase<AddNewUserRequest, AddnewUserResponse, AddNewU
     }
     
     func success(callback: @escaping (AddnewUserResponse) -> Void, response: String) {
-        self.response = AddnewUserResponse(message: response)
-        invokeSuccess(callback: callback, response: self.response!)
+        invokeSuccess(callback: callback, response: AddnewUserResponse(message: response))
     }
     
     func failure(error: Error, callback: @escaping (AddNewUserError) -> Void) {

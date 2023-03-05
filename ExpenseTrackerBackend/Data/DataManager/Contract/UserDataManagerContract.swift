@@ -7,6 +7,7 @@
 
 import Foundation
 
+//---------------------------------------- User Database Contract --------------------------------------------
 public protocol AddUserDatabaseContract {
     
     func addUser(user: User, success: @escaping (String) -> Void, failure: @escaping (Error) -> Void)
@@ -15,4 +16,11 @@ public protocol AddUserDatabaseContract {
 public protocol GetUserDatabaseContract {
     
     func getUser(emailId: String, password: String, response: @escaping (User) -> Void, failure: @escaping (Error) -> Void )
+}
+//------------------------------------------------------------------------------------------------------------
+
+//---------------------------------- Tranasction Database contract -------------------------------------------
+public protocol AddTransactionDatabaseContract {
+    
+    func addTransaction(user: User, transaction: Transaction, success: @escaping (String) -> Void, failure: @escaping (Error) -> Void)
 }

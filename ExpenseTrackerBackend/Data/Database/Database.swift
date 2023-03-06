@@ -42,7 +42,7 @@ public class Database {
                 var filePath = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
                 filePath.append(path: "ExpenseTracker")
                 try FileManager.default.createDirectory(at: filePath, withIntermediateDirectories: true,attributes: [:])
-                filePath.append(path: "User.sqlite")
+                filePath.append(path: "ExpenseTracker.sqlite")
                 Database.filepath = filePath.path()
                 if sqlite3_open(Database.filepath, &dbPointer) == SQLITE_OK {
                     if dbPointer != nil {
@@ -57,10 +57,10 @@ public class Database {
         }
     }
     
-//    deinit {
-//        print("Closing DB")
-//        sqlite3_close_v2(dbPointer)
-//    }
+    deinit {
+        print("Closing DB")
+        sqlite3_close_v2(dbPointer)
+    }
     
 }
 
@@ -93,7 +93,6 @@ extension Database {
             tableTypes += ", "
         }
         let tableQuery = "CREATE TABLE IF NOT EXISTS " + tableName + " (" + tableTypes.dropLast(2) + ")"
-        print("\n\n\n\n\n\(tableQuery)\n\n\n\n\n")
         let createTableStatement = prepareStatement(query: tableQuery)
         if sqlite3_step(createTableStatement) == SQLITE_DONE {
             print("            Created Table \n")

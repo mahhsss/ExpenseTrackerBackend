@@ -26,7 +26,7 @@ extension AddTransactionDataDatabaseService:  AddTransactionDatabaseContract{
         value["date"] = transaction.date
         value["category"] = transaction.category
         value["note"] = transaction.note
-        let result = database.addValue(tableName: "Transaction", columns: transactionDatabaseColumn, values: value)
+        let result = database.addValue(tableName: "\"Transaction\"", columns: transactionDatabaseColumn, values: value)
         
         if result {
             success("values Added Successfully")

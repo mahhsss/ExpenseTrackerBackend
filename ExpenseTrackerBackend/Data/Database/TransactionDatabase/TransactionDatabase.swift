@@ -37,6 +37,6 @@ public class TransactionDatabase {
             self.transactionDatabaseColumn.append(instance)
         }
         database = Database()
-        database.createTable(tableName: "Transaction", columns: transactionDatabaseColumn)
+        database.createTable(tableName: "\"Transaction\"", columns: transactionDatabaseColumn)
     }
 }

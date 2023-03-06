@@ -121,7 +121,6 @@ extension Database {
         let query = "INSERT INTO " +  tableName + "(\(columnNames.dropLast(2))) " + " VALUES(\(columnValue.dropLast(2)))"
         let createTableStatement = prepareStatement(query: query)
         if sqlite3_step(createTableStatement) == SQLITE_DONE {
-            print("            values added \n")
             return true
         } else {
             return false

@@ -24,8 +24,18 @@ extension AddTransactionDataDatabaseService:  AddTransactionDatabaseContract{
         value["transactionType"] = transaction.transactionType.rawValue
         value["currencyType"] = transaction.currencyType.rawValue
         value["date"] = transaction.date
-        value["category"] = transaction.category
-        value["note"] = transaction.note
+        if transaction.category != nil {
+            value["category"] = transaction.category
+        }
+        else {
+            value["category"] = "nil"
+        }
+        if transaction.note != nil {
+            value["note"] = transaction.note
+        }
+        else {
+            value["note"] = "nil"
+        }
         let result = database.addValue(tableName: "\"Transaction\"", columns: transactionDatabaseColumn, values: value)
         
         if result {

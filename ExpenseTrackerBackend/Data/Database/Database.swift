@@ -150,5 +150,33 @@ extension Database {
         return result
     }
     
+    func getArrayData(tableName: String, column: [Column], columnName: String = "", columnValue: String = "") -> [[String: Any]] {
+        var query = "SELECT * FROM " + tableName
+        if columnName != "" {
+            query += " WHERE " + columnName + " = \"" + columnValue + "\""
+        }
+        var selectStatement: OpaquePointer?
+        var result: [[String: Any]] = []
+        if sqlite3_prepare(self.dbPointer, query, -1, &selectStatement, nil) == SQLITE_OK {
+            if sqlite3_step(selectStatement) == SQLITE_ROW {
+                var rowValue: [String: Any] = [: ]
+                for (index,col) in column.enumerated() {
+                    if col.type == "INTEGER" {
+                        rowValue[col.name] = Int(sqlite3_column_int(selectStatement, Int32(index)))
+                        print("\n\n\n\n\(rowValue[col.type])         \(rowValue[col.name])\n\n\n\n")
+                    }
+                    else if col.type == "TEXT" {
+                        rowValue[col.name] = String(cString: sqlite3_column_text(selectStatement, Int32(index))!)
+                        print("\n\n\n\n\(rowValue[col.type])         \(rowValue[col.name])\n\n\n\n")
+                    }
+                }
+                result.append(rowValue)
+                
+            }
+            sqlite3_finalize(selectStatement)
+        }
+        return result
+    }
+    
 }
 

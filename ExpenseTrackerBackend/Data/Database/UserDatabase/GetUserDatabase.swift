@@ -20,8 +20,14 @@ extension GetUserDatabase: GetUserDatabaseContract {
         
         let result = database.getData(tableName: "User", column: userDatabaseColumn, columnName: "emailId", columnValue: emailId)
         if result.count != 0 {
-            let user = User(userId: result["userId"] as! Int, name: result["name"] as! String, emailId: result["emailId"] as! String, password: result["password"] as! String)
-            response(user)
+            if password == result["password"] as! String {
+                let user = User(userId: result["userId"] as! Int, name: result["name"] as! String, emailId: result["emailId"] as! String, password: result["password"] as! String)
+                response(user)
+            }
+            else {
+                failure(ZErrorType.passwordIncorrect)
+            }
+            
         }
         else {
             failure(ZErrorType.authenticationFailure)

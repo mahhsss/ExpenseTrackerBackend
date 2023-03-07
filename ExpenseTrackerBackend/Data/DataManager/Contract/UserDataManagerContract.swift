@@ -24,3 +24,10 @@ public protocol AddTransactionDatabaseContract {
     
     func addTransaction(user: User, transaction: Transaction, success: @escaping (String) -> Void, failure: @escaping (Error) -> Void)
 }
+//------------------------------------------------------------------------------------------------------------
+
+//---------------------------------- Category Database contract -------------------------------------------
+public protocol GetCategoryDatabaseContract {
+    
+    func getCategory(user: User, success: @escaping ([ExpendatureCategory]) -> Void, failure: @escaping (Error) -> Void)
+}

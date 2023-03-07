@@ -21,12 +21,16 @@
 		2AA2458729A8A7ED007BBE2D /* UserDataContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA2458629A8A7ED007BBE2D /* UserDataContract.swift */; };
 		2AA2458929ACAF75007BBE2D /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA2458829ACAF75007BBE2D /* Transaction.swift */; };
 		2AA2458B29ACAF7E007BBE2D /* Analysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA2458A29ACAF7E007BBE2D /* Analysis.swift */; };
-		2AA2458D29ACAF88007BBE2D /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA2458C29ACAF88007BBE2D /* Category.swift */; };
+		2AA2458D29ACAF88007BBE2D /* ExpendatureCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA2458C29ACAF88007BBE2D /* ExpendatureCategory.swift */; };
 		2AADAFE329AF3C8A00F7962D /* GetUserDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AADAFE229AF3C8A00F7962D /* GetUserDatabase.swift */; };
 		2AADAFEF29B0CC1200F7962D /* AddTransactionDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AADAFEE29B0CC1200F7962D /* AddTransactionDatabase.swift */; };
 		2AADAFF129B0CCBE00F7962D /* TransactionDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AADAFF029B0CCBE00F7962D /* TransactionDatabase.swift */; };
 		2AADAFF329B1DE6700F7962D /* AddTransactionDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AADAFF229B1DE6700F7962D /* AddTransactionDataManager.swift */; };
 		2AADAFF629B1E54A00F7962D /* TransactionDataContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AADAFF529B1E54A00F7962D /* TransactionDataContract.swift */; };
+		2AADB00429B5FF9C00F7962D /* CategoryDataContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AADB00329B5FF9C00F7962D /* CategoryDataContract.swift */; };
+		2AADB00729B604FC00F7962D /* GetCategoryDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AADB00629B604FC00F7962D /* GetCategoryDataManager.swift */; };
+		2AADB00A29B618BA00F7962D /* GetCategoryDatabaseServise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AADB00929B618BA00F7962D /* GetCategoryDatabaseServise.swift */; };
+		2AADB00E29B6194000F7962D /* CategoryDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AADB00D29B6194000F7962D /* CategoryDatabase.swift */; };
 		2AD9238D29ACC1F4009F206D /* AddTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD9238C29ACC1F4009F206D /* AddTransaction.swift */; };
 		2AD9238F29ACC201009F206D /* GetAllTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD9238E29ACC201009F206D /* GetAllTransaction.swift */; };
 		2AD9239129ACC213009F206D /* GetTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD9239029ACC213009F206D /* GetTransaction.swift */; };
@@ -61,12 +65,16 @@
 		2AA2458629A8A7ED007BBE2D /* UserDataContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataContract.swift; sourceTree = "<group>"; };
 		2AA2458829ACAF75007BBE2D /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		2AA2458A29ACAF7E007BBE2D /* Analysis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analysis.swift; sourceTree = "<group>"; };
-		2AA2458C29ACAF88007BBE2D /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		2AA2458C29ACAF88007BBE2D /* ExpendatureCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpendatureCategory.swift; sourceTree = "<group>"; };
 		2AADAFE229AF3C8A00F7962D /* GetUserDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserDatabase.swift; sourceTree = "<group>"; };
 		2AADAFEE29B0CC1200F7962D /* AddTransactionDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionDatabase.swift; sourceTree = "<group>"; };
 		2AADAFF029B0CCBE00F7962D /* TransactionDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDatabase.swift; sourceTree = "<group>"; };
 		2AADAFF229B1DE6700F7962D /* AddTransactionDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionDataManager.swift; sourceTree = "<group>"; };
 		2AADAFF529B1E54A00F7962D /* TransactionDataContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDataContract.swift; sourceTree = "<group>"; };
+		2AADB00329B5FF9C00F7962D /* CategoryDataContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDataContract.swift; sourceTree = "<group>"; };
+		2AADB00629B604FC00F7962D /* GetCategoryDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCategoryDataManager.swift; sourceTree = "<group>"; };
+		2AADB00929B618BA00F7962D /* GetCategoryDatabaseServise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCategoryDatabaseServise.swift; sourceTree = "<group>"; };
+		2AADB00D29B6194000F7962D /* CategoryDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDatabase.swift; sourceTree = "<group>"; };
 		2AD9238C29ACC1F4009F206D /* AddTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransaction.swift; sourceTree = "<group>"; };
 		2AD9238E29ACC201009F206D /* GetAllTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllTransaction.swift; sourceTree = "<group>"; };
 		2AD9239029ACC213009F206D /* GetTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTransaction.swift; sourceTree = "<group>"; };
@@ -155,6 +163,7 @@
 		2AA2456729A8A5F5007BBE2D /* Database */ = {
 			isa = PBXGroup;
 			children = (
+				2AADB00829B60B8800F7962D /* CategoryDatabase */,
 				2AA2456A29A8A61E007BBE2D /* UserDatabase */,
 				2AA2456929A8A615007BBE2D /* TransactionDatabase */,
 				2AA2456B29A8A630007BBE2D /* Database.swift */,
@@ -165,6 +174,7 @@
 		2AA2456829A8A601007BBE2D /* DataManager */ = {
 			isa = PBXGroup;
 			children = (
+				2AADB00529B604DF00F7962D /* CategoryDataManager */,
 				2AA2457329A8A699007BBE2D /* UserDataManager */,
 				2AA2457229A8A688007BBE2D /* TransactionDataManager */,
 				2AA2457129A8A682007BBE2D /* Contract */,
@@ -219,6 +229,7 @@
 		2AA2457A29A8A71B007BBE2D /* Contract */ = {
 			isa = PBXGroup;
 			children = (
+				2AADB00229B5FF8500F7962D /* CategoryContract */,
 				2AADAFF429B1E51700F7962D /* TransactionContract */,
 				2AA2458529A8A7D9007BBE2D /* UserContract */,
 			);
@@ -242,7 +253,7 @@
 				2AA2457D29A8A744007BBE2D /* User.swift */,
 				2AA2458829ACAF75007BBE2D /* Transaction.swift */,
 				2AA2458A29ACAF7E007BBE2D /* Analysis.swift */,
-				2AA2458C29ACAF88007BBE2D /* Category.swift */,
+				2AA2458C29ACAF88007BBE2D /* ExpendatureCategory.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -271,6 +282,31 @@
 				2AADAFF529B1E54A00F7962D /* TransactionDataContract.swift */,
 			);
 			path = TransactionContract;
+			sourceTree = "<group>";
+		};
+		2AADB00229B5FF8500F7962D /* CategoryContract */ = {
+			isa = PBXGroup;
+			children = (
+				2AADB00329B5FF9C00F7962D /* CategoryDataContract.swift */,
+			);
+			path = CategoryContract;
+			sourceTree = "<group>";
+		};
+		2AADB00529B604DF00F7962D /* CategoryDataManager */ = {
+			isa = PBXGroup;
+			children = (
+				2AADB00629B604FC00F7962D /* GetCategoryDataManager.swift */,
+			);
+			path = CategoryDataManager;
+			sourceTree = "<group>";
+		};
+		2AADB00829B60B8800F7962D /* CategoryDatabase */ = {
+			isa = PBXGroup;
+			children = (
+				2AADB00929B618BA00F7962D /* GetCategoryDatabaseServise.swift */,
+				2AADB00D29B6194000F7962D /* CategoryDatabase.swift */,
+			);
+			path = CategoryDatabase;
 			sourceTree = "<group>";
 		};
 		2AD9238B29ACC1D5009F206D /* TransactionUsecase */ = {
@@ -443,8 +479,10 @@
 				2AD9239529ACC27F009F206D /* GetMonthTransaction.swift in Sources */,
 				2AD923A729ACC33D009F206D /* GetCategory.swift in Sources */,
 				2AA2458729A8A7ED007BBE2D /* UserDataContract.swift in Sources */,
+				2AADB00429B5FF9C00F7962D /* CategoryDataContract.swift in Sources */,
 				2AD923A929ACC35A009F206D /* AddCategory.swift in Sources */,
 				2AA2458929ACAF75007BBE2D /* Transaction.swift in Sources */,
+				2AADB00A29B618BA00F7962D /* GetCategoryDatabaseServise.swift in Sources */,
 				2AD923A229ACC2F9009F206D /* GetTransation.swift in Sources */,
 				2AA2457729A8A6C8007BBE2D /* UserSignUpDataManager.swift in Sources */,
 				2AD9239129ACC213009F206D /* GetTransaction.swift in Sources */,
@@ -454,6 +492,8 @@
 				2AADAFE329AF3C8A00F7962D /* GetUserDatabase.swift in Sources */,
 				2AA2457029A8A661007BBE2D /* AddUserDatabase.swift in Sources */,
 				2AD9238D29ACC1F4009F206D /* AddTransaction.swift in Sources */,
+				2AADB00E29B6194000F7962D /* CategoryDatabase.swift in Sources */,
+				2AADB00729B604FC00F7962D /* GetCategoryDataManager.swift in Sources */,
 				2AA2458029A8A76D007BBE2D /* UserSignIn.swift in Sources */,
 				2AA2456C29A8A630007BBE2D /* Database.swift in Sources */,
 				2AA2457529A8A6B9007BBE2D /* UserSignInDataManager.swift in Sources */,
@@ -462,7 +502,7 @@
 				2AADAFF129B0CCBE00F7962D /* TransactionDatabase.swift in Sources */,
 				2AD923A029ACC2E8009F206D /* GetYearlyAnalysis.swift in Sources */,
 				2AA2457E29A8A744007BBE2D /* User.swift in Sources */,
-				2AA2458D29ACAF88007BBE2D /* Category.swift in Sources */,
+				2AA2458D29ACAF88007BBE2D /* ExpendatureCategory.swift in Sources */,
 				2AADAFF329B1DE6700F7962D /* AddTransactionDataManager.swift in Sources */,
 				2AD9239729ACC297009F206D /* DeleteTransaction.swift in Sources */,
 			);

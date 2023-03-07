@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class UserLoginDataManagerServise: UserLoginDataContract {
+public class UserLoginDataManagerService: UserLoginDataContract {
     
     var database: GetUserDatabaseContract
     

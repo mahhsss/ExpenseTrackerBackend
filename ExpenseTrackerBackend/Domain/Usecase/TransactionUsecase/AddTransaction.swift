@@ -58,8 +58,7 @@ public class AddNewTransaction: ZUsecase<AddNewTransactionRequest, AddNewTransac
     }
     
     private func failure(callback: @escaping (AddNewTransactionError) -> Void, error: Error) {
-        let error = AddNewTransactionError(error: error)
-        invokeFailure(callback: callback, failure: error)
+        invokeFailure(callback: callback, failure: AddNewTransactionError(error: error))
     }
     
 }

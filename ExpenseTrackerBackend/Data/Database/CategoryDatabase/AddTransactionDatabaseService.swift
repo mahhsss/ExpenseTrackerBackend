@@ -26,7 +26,7 @@ extension AddCategoryDatabaseService: AddCategoryDatabaseContract {
             success("Category Added Successfully")
         }
         else {
-            failure(ZErrorType.unknownError)
+            failure(ZErrorType.valueAlreadyPresent)
         }
     }
 }

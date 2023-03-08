@@ -18,7 +18,7 @@ extension GetCategoryDatabaseService: GetCategoryDatabaseContract {
     
     public func getCategory(user: User, success: @escaping ([ExpendatureCategory]) -> Void, failure: @escaping (Error) -> Void) {
         
-        let result = database.getArrayData(tableName: "Category", column: categoryDatabaseColumn)
+        let result = database.getArrayData(tableName: "Category", column: categoryDatabaseColumn, columnName: "userId", columnValue: user.userId)
         var categories: [ExpendatureCategory] = []
         for row in result {
             

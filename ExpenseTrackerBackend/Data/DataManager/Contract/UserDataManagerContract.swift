@@ -20,6 +20,10 @@ public protocol GetUserDatabaseContract {
 //------------------------------------------------------------------------------------------------------------
 
 //---------------------------------- Tranasction Database contract -------------------------------------------
+public protocol GetAddTransactionDatabase {
+    func getTransaction(user: User, success: @escaping ([Transaction]) -> Void, failure: @escaping (Error) -> Void)
+}
+
 public protocol AddTransactionDatabaseContract {
     
     func addTransaction(user: User, transaction: Transaction, success: @escaping (String) -> Void, failure: @escaping (Error) -> Void)

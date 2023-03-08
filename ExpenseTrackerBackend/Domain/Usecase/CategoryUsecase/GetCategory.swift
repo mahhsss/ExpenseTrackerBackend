@@ -20,7 +20,7 @@ public class GetCategoryRequest: ZRequest {
 public class GetCategoryResponse: ZResponse {
     
     public let category: [ExpendatureCategory]
-    init(category: [ExpendatureCategory]) {
+    public init(category: [ExpendatureCategory]) {
         self.category = category
     }
 }

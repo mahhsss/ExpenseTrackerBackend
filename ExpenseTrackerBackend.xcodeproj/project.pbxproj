@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2A16147E29B7645C005E999E /* AddCategoryDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A16147D29B7645C005E999E /* AddCategoryDataManager.swift */; };
 		2A16148029B76891005E999E /* AddTransactionDatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A16147F29B76891005E999E /* AddTransactionDatabaseService.swift */; };
+		2A16148A29B8B586005E999E /* GetTransactionDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A16148929B8B586005E999E /* GetTransactionDataManager.swift */; };
+		2A16148C29B8B780005E999E /* GetAllTransactionDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A16148B29B8B780005E999E /* GetAllTransactionDatabase.swift */; };
 		2AA2454A29A8A2F4007BBE2D /* ExpenseTrackerBackend.h in Headers */ = {isa = PBXBuildFile; fileRef = 2AA2454929A8A2F4007BBE2D /* ExpenseTrackerBackend.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2AA2456C29A8A630007BBE2D /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA2456B29A8A630007BBE2D /* Database.swift */; };
 		2AA2456E29A8A657007BBE2D /* UserDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA2456D29A8A657007BBE2D /* UserDatabase.swift */; };
@@ -54,6 +56,8 @@
 		23FC0F295655A2431F85905D /* Pods-ExpenseTrackerBackend.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExpenseTrackerBackend.release.xcconfig"; path = "Target Support Files/Pods-ExpenseTrackerBackend/Pods-ExpenseTrackerBackend.release.xcconfig"; sourceTree = "<group>"; };
 		2A16147D29B7645C005E999E /* AddCategoryDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryDataManager.swift; sourceTree = "<group>"; };
 		2A16147F29B76891005E999E /* AddTransactionDatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionDatabaseService.swift; sourceTree = "<group>"; };
+		2A16148929B8B586005E999E /* GetTransactionDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTransactionDataManager.swift; sourceTree = "<group>"; };
+		2A16148B29B8B780005E999E /* GetAllTransactionDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllTransactionDatabase.swift; sourceTree = "<group>"; };
 		2AA2454629A8A2F4007BBE2D /* ExpenseTrackerBackend.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ExpenseTrackerBackend.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AA2454929A8A2F4007BBE2D /* ExpenseTrackerBackend.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExpenseTrackerBackend.h; sourceTree = "<group>"; };
 		2AA2456B29A8A630007BBE2D /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
@@ -191,6 +195,7 @@
 			children = (
 				2AADAFF029B0CCBE00F7962D /* TransactionDatabase.swift */,
 				2AADAFEE29B0CC1200F7962D /* AddTransactionDatabase.swift */,
+				2A16148B29B8B780005E999E /* GetAllTransactionDatabase.swift */,
 			);
 			path = TransactionDatabase;
 			sourceTree = "<group>";
@@ -217,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				2AADAFF229B1DE6700F7962D /* AddTransactionDataManager.swift */,
+				2A16148929B8B586005E999E /* GetTransactionDataManager.swift */,
 			);
 			path = TransactionDataManager;
 			sourceTree = "<group>";
@@ -479,6 +485,8 @@
 				2AD9239929ACC2A3009F206D /* UpdateTransaction.swift in Sources */,
 				2AD9239E29ACC2D9009F206D /* GetMonthlyAnalysis.swift in Sources */,
 				2AA2458B29ACAF7E007BBE2D /* Analysis.swift in Sources */,
+				2A16148C29B8B780005E999E /* GetAllTransactionDatabase.swift in Sources */,
+				2A16148A29B8B586005E999E /* GetTransactionDataManager.swift in Sources */,
 				2AD9239329ACC24B009F206D /* GetWeekTransaction.swift in Sources */,
 				2AD9239C29ACC2CD009F206D /* GetWeeklyAnalysis.swift in Sources */,
 				2A16147E29B7645C005E999E /* AddCategoryDataManager.swift in Sources */,

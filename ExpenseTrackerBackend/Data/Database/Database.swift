@@ -150,26 +150,25 @@ extension Database {
         return result
     }
     
-    func getArrayData(tableName: String, column: [Column], columnName: String = "", columnValue: String = "") -> [[String: Any]] {
+    func getArrayData(tableName: String, column: [Column], columnName: String?, columnValue: Int?) -> [[String: Any]] {
         var query = "SELECT * FROM " + tableName
-        if columnName != "" {
-            query += " WHERE " + columnName + " = \"" + columnValue + "\""
+        if let columnName = columnName {
+            query += " WHERE " + columnName + " = \"" + "\(columnValue!)" + "\""
         }
         var selectStatement: OpaquePointer?
         var result: [[String: Any]] = []
         if sqlite3_prepare(self.dbPointer, query, -1, &selectStatement, nil) == SQLITE_OK {
-            if sqlite3_step(selectStatement) == SQLITE_ROW {
+            while sqlite3_step(selectStatement) == SQLITE_ROW {
                 var rowValue: [String: Any] = [: ]
                 for (index,col) in column.enumerated() {
-                    if col.type == "INTEGER" {
+                    if col.type == "integer" {
                         rowValue[col.name] = Int(sqlite3_column_int(selectStatement, Int32(index)))
-                        print("\n\n\n\n\(rowValue[col.type])         \(rowValue[col.name])\n\n\n\n")
                     }
-                    else if col.type == "TEXT" {
+                    else if col.type == "text" {
                         rowValue[col.name] = String(cString: sqlite3_column_text(selectStatement, Int32(index))!)
-                        print("\n\n\n\n\(rowValue[col.type])         \(rowValue[col.name])\n\n\n\n")
                     }
                 }
+                print("\n\n\(rowValue)")
                 result.append(rowValue)
                 
             }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A16147E29B7645C005E999E /* AddCategoryDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A16147D29B7645C005E999E /* AddCategoryDataManager.swift */; };
+		2A16148029B76891005E999E /* AddTransactionDatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A16147F29B76891005E999E /* AddTransactionDatabaseService.swift */; };
 		2AA2454A29A8A2F4007BBE2D /* ExpenseTrackerBackend.h in Headers */ = {isa = PBXBuildFile; fileRef = 2AA2454929A8A2F4007BBE2D /* ExpenseTrackerBackend.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2AA2456C29A8A630007BBE2D /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA2456B29A8A630007BBE2D /* Database.swift */; };
 		2AA2456E29A8A657007BBE2D /* UserDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA2456D29A8A657007BBE2D /* UserDatabase.swift */; };
@@ -29,7 +31,7 @@
 		2AADAFF629B1E54A00F7962D /* TransactionDataContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AADAFF529B1E54A00F7962D /* TransactionDataContract.swift */; };
 		2AADB00429B5FF9C00F7962D /* CategoryDataContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AADB00329B5FF9C00F7962D /* CategoryDataContract.swift */; };
 		2AADB00729B604FC00F7962D /* GetCategoryDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AADB00629B604FC00F7962D /* GetCategoryDataManager.swift */; };
-		2AADB00A29B618BA00F7962D /* GetCategoryDatabaseServise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AADB00929B618BA00F7962D /* GetCategoryDatabaseServise.swift */; };
+		2AADB00A29B618BA00F7962D /* GetCategoryDatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AADB00929B618BA00F7962D /* GetCategoryDatabaseService.swift */; };
 		2AADB00E29B6194000F7962D /* CategoryDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AADB00D29B6194000F7962D /* CategoryDatabase.swift */; };
 		2AD9238D29ACC1F4009F206D /* AddTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD9238C29ACC1F4009F206D /* AddTransaction.swift */; };
 		2AD9238F29ACC201009F206D /* GetAllTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD9238E29ACC201009F206D /* GetAllTransaction.swift */; };
@@ -50,6 +52,8 @@
 
 /* Begin PBXFileReference section */
 		23FC0F295655A2431F85905D /* Pods-ExpenseTrackerBackend.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExpenseTrackerBackend.release.xcconfig"; path = "Target Support Files/Pods-ExpenseTrackerBackend/Pods-ExpenseTrackerBackend.release.xcconfig"; sourceTree = "<group>"; };
+		2A16147D29B7645C005E999E /* AddCategoryDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryDataManager.swift; sourceTree = "<group>"; };
+		2A16147F29B76891005E999E /* AddTransactionDatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionDatabaseService.swift; sourceTree = "<group>"; };
 		2AA2454629A8A2F4007BBE2D /* ExpenseTrackerBackend.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ExpenseTrackerBackend.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AA2454929A8A2F4007BBE2D /* ExpenseTrackerBackend.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExpenseTrackerBackend.h; sourceTree = "<group>"; };
 		2AA2456B29A8A630007BBE2D /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
@@ -73,7 +77,7 @@
 		2AADAFF529B1E54A00F7962D /* TransactionDataContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDataContract.swift; sourceTree = "<group>"; };
 		2AADB00329B5FF9C00F7962D /* CategoryDataContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDataContract.swift; sourceTree = "<group>"; };
 		2AADB00629B604FC00F7962D /* GetCategoryDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCategoryDataManager.swift; sourceTree = "<group>"; };
-		2AADB00929B618BA00F7962D /* GetCategoryDatabaseServise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCategoryDatabaseServise.swift; sourceTree = "<group>"; };
+		2AADB00929B618BA00F7962D /* GetCategoryDatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCategoryDatabaseService.swift; sourceTree = "<group>"; };
 		2AADB00D29B6194000F7962D /* CategoryDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDatabase.swift; sourceTree = "<group>"; };
 		2AD9238C29ACC1F4009F206D /* AddTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransaction.swift; sourceTree = "<group>"; };
 		2AD9238E29ACC201009F206D /* GetAllTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllTransaction.swift; sourceTree = "<group>"; };
@@ -296,6 +300,7 @@
 			isa = PBXGroup;
 			children = (
 				2AADB00629B604FC00F7962D /* GetCategoryDataManager.swift */,
+				2A16147D29B7645C005E999E /* AddCategoryDataManager.swift */,
 			);
 			path = CategoryDataManager;
 			sourceTree = "<group>";
@@ -303,8 +308,9 @@
 		2AADB00829B60B8800F7962D /* CategoryDatabase */ = {
 			isa = PBXGroup;
 			children = (
-				2AADB00929B618BA00F7962D /* GetCategoryDatabaseServise.swift */,
 				2AADB00D29B6194000F7962D /* CategoryDatabase.swift */,
+				2AADB00929B618BA00F7962D /* GetCategoryDatabaseService.swift */,
+				2A16147F29B76891005E999E /* AddTransactionDatabaseService.swift */,
 			);
 			path = CategoryDatabase;
 			sourceTree = "<group>";
@@ -475,6 +481,7 @@
 				2AA2458B29ACAF7E007BBE2D /* Analysis.swift in Sources */,
 				2AD9239329ACC24B009F206D /* GetWeekTransaction.swift in Sources */,
 				2AD9239C29ACC2CD009F206D /* GetWeeklyAnalysis.swift in Sources */,
+				2A16147E29B7645C005E999E /* AddCategoryDataManager.swift in Sources */,
 				2AD923A429ACC311009F206D /* AddMonthlyAnalysis.swift in Sources */,
 				2AD9239529ACC27F009F206D /* GetMonthTransaction.swift in Sources */,
 				2AD923A729ACC33D009F206D /* GetCategory.swift in Sources */,
@@ -482,9 +489,10 @@
 				2AADB00429B5FF9C00F7962D /* CategoryDataContract.swift in Sources */,
 				2AD923A929ACC35A009F206D /* AddCategory.swift in Sources */,
 				2AA2458929ACAF75007BBE2D /* Transaction.swift in Sources */,
-				2AADB00A29B618BA00F7962D /* GetCategoryDatabaseServise.swift in Sources */,
+				2AADB00A29B618BA00F7962D /* GetCategoryDatabaseService.swift in Sources */,
 				2AD923A229ACC2F9009F206D /* GetTransation.swift in Sources */,
 				2AA2457729A8A6C8007BBE2D /* UserSignUpDataManager.swift in Sources */,
+				2A16148029B76891005E999E /* AddTransactionDatabaseService.swift in Sources */,
 				2AD9239129ACC213009F206D /* GetTransaction.swift in Sources */,
 				2AADAFF629B1E54A00F7962D /* TransactionDataContract.swift in Sources */,
 				2AA2458229A8A77A007BBE2D /* UserSignUp.swift in Sources */,

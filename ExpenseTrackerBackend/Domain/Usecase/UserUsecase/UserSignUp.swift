@@ -58,7 +58,6 @@ public class AddNewUser: ZUsecase<AddNewUserRequest, AddnewUserResponse, AddNewU
     }
     
     func failure(error: Error, callback: @escaping (AddNewUserError) -> Void) {
-        let error = AddNewUserError(error: error)
-        invokeFailure(callback: callback, failure: error)
+        invokeFailure(callback: callback, failure: AddNewUserError(error: error))
     }
 }

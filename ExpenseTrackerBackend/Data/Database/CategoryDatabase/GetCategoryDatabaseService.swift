@@ -9,16 +9,16 @@ import Foundation
 import VTComponents
 import SQLite3
 
-public class GetCategoryDatabaseServise: CategoryDatabase {
+public class GetCategoryDatabaseService: CategoryDatabase {
     
     public override init() { }
 }
 
-extension GetCategoryDatabaseServise: GetCategoryDatabaseContract {
+extension GetCategoryDatabaseService: GetCategoryDatabaseContract {
     
     public func getCategory(user: User, success: @escaping ([ExpendatureCategory]) -> Void, failure: @escaping (Error) -> Void) {
         
-        let result = database.getArrayData(tableName: "ExpendatureCategory", column: categoryDatabaseColumn)
+        let result = database.getArrayData(tableName: "Category", column: categoryDatabaseColumn)
         var categories: [ExpendatureCategory] = []
         for row in result {
             

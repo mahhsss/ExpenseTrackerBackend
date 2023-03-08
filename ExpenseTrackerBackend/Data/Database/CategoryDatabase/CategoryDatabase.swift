@@ -40,6 +40,6 @@ public class CategoryDatabase {
         }
         
         database = Database()
-        database.createTable(tableName: "ExpendatureCategory", columns: categoryDatabaseColumn)
+        database.createTable(tableName: "Category", columns: categoryDatabaseColumn)
     }
 }

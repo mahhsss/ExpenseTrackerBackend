@@ -13,18 +13,25 @@ public class GetAllTransactionDatabase: TransactionDatabase {
     public override init() { }
 }
 
-extension GetAllTransactionDatabase: GetAddTransactionDatabase {
+extension GetAllTransactionDatabase: GetAllTransactionDatabaseContract {
    
     public func getTransaction(user: User, success: @escaping ([Transaction]) -> Void, failure: @escaping (Error) -> Void) {
         let result = database.getArrayData(tableName: "\"Transaction\"", column: transactionDatabaseColumn, columnName: "userId", columnValue: user.userId)
-        var categories: [Transaction] = []
+        var transactions: [Transaction] = []
         for row in result {
-            
-            let category = Transaction(transactionId: row["transactionId"] as! Int, userId: row["userId"] as! Int, amount: row["amount"] as! Int, transactionType: row["transactionType"] as! TransactionType, currencyType: row["currencyType"] as! CurrencyType, date: row["date"] as! String)
-            categories.append(category)
+            var transactionType: TransactionType = .spending
+            var currencyType: CurrencyType = .bankTransaction
+            if row["transactionType"] as! String == "Income" {
+                transactionType = .income
+            }
+            if row["currencyType"] as! String == "Cash" {
+                currencyType = .cash
+            }
+            let category = Transaction(transactionId: row["transactionId"] as! Int, userId: row["userId"] as! Int, amount: row["amount"] as! Int, transactionType: transactionType, currencyType: currencyType, date: row["date"] as! String)
+            transactions.append(category)
         }
-        if !categories.isEmpty {
-            success(categories)
+        if !transactions.isEmpty {
+            success(transactions)
         }
         else {
             failure(ZErrorType.dataNotFound)

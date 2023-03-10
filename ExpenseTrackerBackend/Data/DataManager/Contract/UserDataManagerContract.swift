@@ -20,7 +20,7 @@ public protocol GetUserDatabaseContract {
 //------------------------------------------------------------------------------------------------------------
 
 //---------------------------------- Tranasction Database contract -------------------------------------------
-public protocol GetAddTransactionDatabase {
+public protocol GetAllTransactionDatabaseContract {
     func getTransaction(user: User, success: @escaping ([Transaction]) -> Void, failure: @escaping (Error) -> Void)
 }
 
@@ -39,4 +39,10 @@ public protocol GetCategoryDatabaseContract {
 public protocol AddCategoryDatabaseContract {
     
     func addCategory(user: User, category: ExpendatureCategory, success: @escaping (String) -> Void, failure: @escaping (Error) -> Void)
+}
+//------------------------------------------------------------------------------------------------------------
+
+//---------------------------------- Analysis Database contract -------------------------------------------
+public protocol GetTransactionAnalysisDatabaseContract {
+    func getTransactionAnalysis(user: User, startDate: String, endDate: String, success: @escaping ([Transaction]) -> Void, failure: @escaping (Error) -> Void)
 }

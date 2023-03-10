@@ -111,7 +111,7 @@ extension Database {
                 continue
             }
             columnNames += column.name + ", "
-            if column.type == "text" {
+            if column.type == "text" || column.type == "datetime" {
                 columnValue += "\"" + String(values[column.name] as! String) + "\", "
             }
             else if column.type == "integer" {
@@ -140,7 +140,7 @@ extension Database {
                     if col.type == "integer" {
                         result[col.name] = Int(sqlite3_column_int(selectStatement, Int32(index)))
                     }
-                    else if col.type == "text" {
+                    else if col.type == "text" || col.type == "datetime" {
                         result[col.name] = String(cString: sqlite3_column_text(selectStatement, Int32(index))!)
                     }
                 }
@@ -164,11 +164,37 @@ extension Database {
                     if col.type == "integer" {
                         rowValue[col.name] = Int(sqlite3_column_int(selectStatement, Int32(index)))
                     }
-                    else if col.type == "text" {
+                    else if col.type == "text" || col.type == "datetime" {
                         rowValue[col.name] = String(cString: sqlite3_column_text(selectStatement, Int32(index))!)
                     }
                 }
-                print("\n\n\(rowValue)")
+                result.append(rowValue)
+                
+            }
+            sqlite3_finalize(selectStatement)
+        }
+        return result
+    }
+    
+    func getTransactionAnalysis(tableName: String, column: [Column], columnName: String?, columnValue1: String?, columnValue2: String?) -> [[String: Any]] {
+        var query = "SELECT * FROM " + tableName
+        if let columnName = columnName {
+            query += " WHERE " + ("\"\(columnName)\"") + " > " + ("\"\(columnValue1!)\"") + " AND " + ("\"\(columnName)\"") + " < " + ("\"\(columnValue2!)\"")
+        }
+        print("\n\n\n\(query)\n\n\n")
+        var selectStatement: OpaquePointer?
+        var result: [[String: Any]] = []
+        if sqlite3_prepare(self.dbPointer, query, -1, &selectStatement, nil) == SQLITE_OK {
+            while sqlite3_step(selectStatement) == SQLITE_ROW {
+                var rowValue: [String: Any] = [: ]
+                for (index,col) in column.enumerated() {
+                    if col.type == "integer" {
+                        rowValue[col.name] = Int(sqlite3_column_int(selectStatement, Int32(index)))
+                    }
+                    else if col.type == "text" || col.type == "datetime" {
+                        rowValue[col.name] = String(cString: sqlite3_column_text(selectStatement, Int32(index))!)
+                    }
+                }
                 result.append(rowValue)
                 
             }

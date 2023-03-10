@@ -9,8 +9,8 @@ import Foundation
 
 public class GetAllTransactionDataManager: GetAllTransactionDataProtocol {
    
-    var database: GetAddTransactionDatabase
-    public init(database: GetAddTransactionDatabase) {
+    var database: GetAllTransactionDatabaseContract
+    public init(database: GetAllTransactionDatabaseContract) {
         self.database = database
     }
     

@@ -10,7 +10,7 @@ import Foundation
 public class TransactionDatabase {
     
     let columnName: [String] = ["transactionId", "userId", "amount", "transactionType", "currencyType", "date", "category", "note"]
-    let columnType: [String] = ["integer", "integer", "integer", "text", "text", "text", "text", "text"]
+    let columnType: [String] = ["integer", "integer", "integer", "text", "text", "datetime", "text", "text"]
     let primaryKey: [String] = ["transactionId"]
     let autoIncrement: [String] = ["transactionId"]
     let uniqueKey: [String] = []

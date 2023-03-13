@@ -77,7 +77,7 @@ extension Database {
         return statementPointer
     }
     
-    func createTable(tableName: String, columns: [Column]) {
+    func createTable(tableName: String, columns: [Column], constraint: String? = nil) {
         var tableTypes: String = ""
         for column in columns {
             tableTypes += column.name + " \(column.type)"
@@ -92,7 +92,14 @@ extension Database {
             }
             tableTypes += ", "
         }
-        let tableQuery = "CREATE TABLE IF NOT EXISTS " + tableName + " (" + tableTypes.dropLast(2) + ")"
+        var tableQuery = ""
+        if constraint != nil {
+            tableQuery  = "CREATE TABLE IF NOT EXISTS " + tableName + " (" + tableTypes.dropLast(2) + String(constraint!) + ")"
+        }
+        else {
+            tableQuery = "CREATE TABLE IF NOT EXISTS " + tableName + " (" + tableTypes.dropLast(2) + ")"
+        }
+        
         let createTableStatement = prepareStatement(query: tableQuery)
         if sqlite3_step(createTableStatement) == SQLITE_DONE {
             print("            Created Table \n")
@@ -112,7 +119,12 @@ extension Database {
             }
             columnNames += column.name + ", "
             if column.type == "text" || column.type == "datetime" {
-                columnValue += "\"" + String(values[column.name] as! String) + "\", "
+                if values[column.name] != nil {
+                    columnValue += "\"" + String(values[column.name] as! String) + "\", "
+                }
+                else {
+                    columnValue += "\"" + "nil" + "\", "
+                }
             }
             else if column.type == "integer" {
                 columnValue += String(values[column.name] as! Int) + ", "
@@ -176,12 +188,11 @@ extension Database {
         return result
     }
     
-    func getTransactionAnalysis(tableName: String, column: [Column], columnName: String?, columnValue1: String?, columnValue2: String?) -> [[String: Any]] {
+    func getTransactionAnalysis(tableName: String, column: [Column], columnName: String?, columnValue1: String?, columnValue2: String?, userId: Int?) -> [[String: Any]] {
         var query = "SELECT * FROM " + tableName
         if let columnName = columnName {
-            query += " WHERE " + ("\"\(columnName)\"") + " > " + ("\"\(columnValue1!)\"") + " AND " + ("\"\(columnName)\"") + " < " + ("\"\(columnValue2!)\"")
+            query += " WHERE " + ("\"\(columnName)\"") + " > " + ("\"\(columnValue1!)\"") + " AND " + ("\"\(columnName)\"") + " < " + ("\"\(columnValue2!)\"") + " AND " + (" userId = ") + ("\"\(userId!)\"")
         }
-        print("\n\n\n\(query)\n\n\n")
         var selectStatement: OpaquePointer?
         var result: [[String: Any]] = []
         if sqlite3_prepare(self.dbPointer, query, -1, &selectStatement, nil) == SQLITE_OK {

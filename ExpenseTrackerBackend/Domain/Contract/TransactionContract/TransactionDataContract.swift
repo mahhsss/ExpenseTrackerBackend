@@ -9,7 +9,7 @@ import Foundation
 
 public protocol GetAllTransactionDataProtocol {
     
-    func getCategory(user: User, success: @escaping ([Transaction]) -> Void, failure: @escaping (Error) -> Void)
+    func getAllTransaction(user: User, success: @escaping ([Transaction]) -> Void, failure: @escaping (Error) -> Void)
 }
 
 public protocol AddTransactionDataContract {

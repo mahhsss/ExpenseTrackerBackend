@@ -8,13 +8,15 @@
 import Foundation
 
 public class GetAllTransactionDataManager: GetAllTransactionDataProtocol {
+    
+    
    
     var database: GetAllTransactionDatabaseContract
     public init(database: GetAllTransactionDatabaseContract) {
         self.database = database
     }
     
-    public func getCategory(user: User, success: @escaping ([Transaction]) -> Void, failure: @escaping (Error) -> Void) {
+    public func getAllTransaction(user: User, success: @escaping ([Transaction]) -> Void, failure: @escaping (Error) -> Void) {
         self.database.getTransaction(user: user) { [weak self] (response) in
             self?.success(callback: success, response: response)
         } failure: { [weak self] (error) in

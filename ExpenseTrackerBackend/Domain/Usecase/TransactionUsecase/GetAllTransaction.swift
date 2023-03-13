@@ -44,7 +44,7 @@ public class GetAllTransaction: ZUsecase<GetAllTransactionRequest, GetAllTransac
     }
     
     public override func run(request: GetAllTransactionRequest, success: @escaping (GetAllTransactionResponse) -> Void, failure: @escaping (GetAllTransactionError) -> Void) {
-        self.dataManager.getCategory(user: request.user) { [weak self] (response) in
+        self.dataManager.getAllTransaction(user: request.user) { [weak self] (response) in
             self?.success(callback: success, response: response)
         } failure: { [weak self] (error) in
             self?.failure(callback: failure, error: error)

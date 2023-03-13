@@ -15,7 +15,7 @@ public class CategoryDatabase {
     let columnType: [String] = ["integer", "integer", "text"]
     let primaryKey: [String] = ["categoryId"]
     let autoIncrement: [String] = ["categoryId"]
-    let uniqueKey: [String] = ["categoryname"]
+    let uniqueKey: [String] = []
     let database: Database
     public var categoryDatabaseColumn: [Column] = []
 
@@ -40,6 +40,6 @@ public class CategoryDatabase {
         }
         
         database = Database()
-        database.createTable(tableName: "Category", columns: categoryDatabaseColumn)
+        database.createTable(tableName: "Category", columns: categoryDatabaseColumn, constraint: ", constraint user_category unique(userId,categoryname)")
     }
 }

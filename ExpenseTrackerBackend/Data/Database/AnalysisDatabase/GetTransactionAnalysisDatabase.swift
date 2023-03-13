@@ -17,7 +17,7 @@ public class GetTransactionAnalysisDatabase: TransactionDatabase {
 extension GetTransactionAnalysisDatabase: GetTransactionAnalysisDatabaseContract {
     
     public func getTransactionAnalysis(user: User, startDate: String, endDate: String, success: @escaping ([Transaction]) -> Void, failure: @escaping (Error) -> Void) {
-        let result = database.getTransactionAnalysis(tableName: "\"Transaction\"", column: transactionDatabaseColumn, columnName: "date", columnValue1: startDate, columnValue2: endDate)
+        let result = database.getTransactionAnalysis(tableName: "\"Transaction\"", column: transactionDatabaseColumn, columnName: "date", columnValue1: startDate, columnValue2: endDate, userId: user.userId)
         var transactions: [Transaction] = []
         for row in result {
             var transactionType: TransactionType = .spending
@@ -28,7 +28,7 @@ extension GetTransactionAnalysisDatabase: GetTransactionAnalysisDatabaseContract
             if row["currencyType"] as! String == "Cash" {
                 currencyType = .cash
             }
-            let transaction = Transaction(transactionId: row["transactionId"] as! Int, userId: row["userId"] as! Int, amount: row["amount"] as! Int, transactionType: transactionType, currencyType: currencyType, date: row["date"] as! String)
+            let transaction = Transaction(transactionId: row["transactionId"] as! Int, userId: row["userId"] as! Int, amount: row["amount"] as! Int, transactionType: transactionType, currencyType: currencyType, date: row["date"] as! String, category: row["category"] as? String, note: row["note"] as? String)
             transactions.append(transaction)
         }
         if !transactions.isEmpty {

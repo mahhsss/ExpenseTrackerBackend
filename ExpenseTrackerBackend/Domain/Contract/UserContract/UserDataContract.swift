@@ -15,3 +15,7 @@ public protocol UserLoginDataContract {
     
     func userLogin(emailId: String, password: String, success: @escaping (User) -> Void, failure: @escaping (Error) -> Void)
 }
+
+public protocol UpdateUserDataContract {
+    func updateUser(user: User, column: String, update: Any, success: @escaping (String) -> Void, failure: @escaping (Error) -> Void)
+}

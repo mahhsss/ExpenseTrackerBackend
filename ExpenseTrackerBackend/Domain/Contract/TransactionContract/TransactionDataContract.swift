@@ -16,3 +16,8 @@ public protocol AddTransactionDataContract {
     
     func addTransaction(user: User, transaction: Transaction, success: @escaping (String) -> Void, failure: @escaping (Error) -> Void)
 }
+
+public protocol UpdateTransactionDataContract {
+    
+    func updateTransaction(user: User, transaction: Transaction, column: String, update: Any, success: @escaping (String) -> Void, failure: @escaping (Error) -> Void)
+}

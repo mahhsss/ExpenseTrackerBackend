@@ -38,8 +38,6 @@ extension GetAllTransactionDatabase: GetAllTransactionDatabaseContract {
             failure(ZErrorType.dataNotFound)
         }
     }
-
-    
     
 }
 

@@ -67,7 +67,7 @@ public class Database {
 extension Database {
     
     private func prepareStatement(query: String) -> OpaquePointer? {
-
+        
         var statementPointer: OpaquePointer? = nil
         if sqlite3_prepare_v2(dbPointer, query, -1, &statementPointer, nil) == SQLITE_OK {
             return statementPointer
@@ -106,7 +106,7 @@ extension Database {
         } else {
             print("Error in creating Table")
         }
-
+        
     }
     
     func addValue(tableName: String, columns: [Column], values: [String: Any]) -> Bool {
@@ -213,6 +213,36 @@ extension Database {
         }
         return result
     }
+    
+    func updateValue(tableName: String, columns: [Column], values: [String: Any], idName: String, id: Int, IncrementValue: Int = 0) -> Bool {
+        
+        var columnValue: String = ""
+        for column in columns {
+            if values[column.name] != nil {
+                if column.type == "text" {
+                    columnValue += column.name + " = " + "'" + String(values[column.name] as! String) + "'" + ", "
+                }
+                else if column.type == "integer" {
+                    if IncrementValue != 0 {
+                        columnValue += column.name + " = " + column.name + " + " + String(IncrementValue)
+                    }
+                    else {
+                        columnValue += column.name + " = " + String(values[column.name] as! Int)
+                    }
+                    columnValue += ", "
+                }
+                
+            }
+        }
+        let query = "UPDATE \(tableName) SET \(columnValue.dropLast(2)) WHERE \(idName) = \(id) "
+        if sqlite3_exec(self.dbPointer, query, nil, nil, nil) == SQLITE_OK {
+            return true
+        }
+        else {
+            return false
+        }
+    }
+
     
 }
 

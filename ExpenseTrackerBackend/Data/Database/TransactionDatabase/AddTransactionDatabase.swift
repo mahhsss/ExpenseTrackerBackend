@@ -28,7 +28,7 @@ extension AddTransactionDataDatabaseService:  AddTransactionDatabaseContract{
             value["category"] = transaction.category
         }
         else {
-            value["category"] = transaction.category
+            value["category"] = "nil"
         }
         if transaction.note != nil {
             value["note"] = transaction.note

@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class AddCategoryDatamanager: AddCategoryProtocol {
+public class AddCategoryDatamanager: AddCategoryDataContract {
     
     var database: AddCategoryDatabaseContract
     public init(database: AddCategoryDatabaseContract) {

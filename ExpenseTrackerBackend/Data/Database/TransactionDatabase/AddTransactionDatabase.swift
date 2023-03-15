@@ -24,6 +24,7 @@ extension AddTransactionDataDatabaseService:  AddTransactionDatabaseContract{
         value["transactionType"] = transaction.transactionType.rawValue
         value["currencyType"] = transaction.currencyType.rawValue
         value["date"] = transaction.date
+        
         if transaction.category != nil {
             value["category"] = transaction.category
         }

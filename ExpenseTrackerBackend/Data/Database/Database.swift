@@ -242,6 +242,23 @@ extension Database {
             return false
         }
     }
+    
+    
+    func deleteValue(tableName: String, columnName: String, columnValue: Any) -> Bool {
+        
+        let deleteQuery = "DELETE FROM \(tableName) WHERE " + columnName + " = " + "\(columnValue)"
+        var deleteStatement: OpaquePointer?
+        if sqlite3_prepare_v2(dbPointer, deleteQuery, -1, &deleteStatement, nil) == SQLITE_OK {
+
+            if sqlite3_step(deleteStatement) == SQLITE_DONE {
+                return true
+            } else {
+                return false
+            }
+        }
+        sqlite3_finalize(deleteStatement)
+        return false
+    }
 
     
 }

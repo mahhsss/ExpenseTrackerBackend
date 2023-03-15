@@ -46,7 +46,6 @@ public class UpdateUser: ZUsecase<UpdateUserRequest, UpdateUserResponse, UpdateU
     }
     
     public override func run(request: UpdateUserRequest, success: @escaping (UpdateUserResponse) -> Void, failure: @escaping (UpdateUserError) -> Void) {
-        print("in usecase")
         self.dataManager.updateUser(user: request.user, column: request.column, update: request.update) { [weak self] (response) in
             self?.success(callback: success, response: response)
         } failure: { [weak self] (error) in

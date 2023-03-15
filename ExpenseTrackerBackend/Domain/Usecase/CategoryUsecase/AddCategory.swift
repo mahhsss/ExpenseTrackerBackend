@@ -38,8 +38,8 @@ public class AddCategoryError: ZError {
 
 public class AddCategory: ZUsecase<AddCategoryRequest, AddCategoryResponse, AddCategoryError> {
     
-    var dataManager: AddCategoryProtocol
-    public init(dataManager: AddCategoryProtocol) {
+    var dataManager: AddCategoryDataContract
+    public init(dataManager: AddCategoryDataContract) {
         self.dataManager = dataManager
     }
     

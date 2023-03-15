@@ -12,7 +12,7 @@ public protocol GetCategoryDataProtocol {
     func getCategory(user: User, success: @escaping ([ExpendatureCategory]) -> Void, failure: @escaping (Error) -> Void)
 }
 
-public protocol AddCategoryProtocol {
+public protocol AddCategoryDataContract {
     
     func addCategory(user: User, category: ExpendatureCategory, success: @escaping (String) -> Void, failure: @escaping (Error) -> Void)
 }

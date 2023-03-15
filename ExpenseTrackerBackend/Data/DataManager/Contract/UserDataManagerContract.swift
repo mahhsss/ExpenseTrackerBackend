@@ -30,13 +30,30 @@ public protocol AddTransactionDatabaseContract {
     
     func addTransaction(user: User, transaction: Transaction, success: @escaping (String) -> Void, failure: @escaping (Error) -> Void)
 }
+
 public protocol UpdateTranasctionDatabaseContract {
     
     func updateTransaction(user: User, transaction: Transaction, column: String, update: Any, success: @escaping (String) -> Void, failure: @escaping (Error) -> Void)
 }
+
+public protocol DeleteTransactionDatabaseContract {
+    func deleteTransaction(user: User, transaction: Transaction, columnName: String, columnValue: Any, success: @escaping (String) -> Void, failure: @escaping (Error) -> Void)
+}
 //------------------------------------------------------------------------------------------------------------
 
-//---------------------------------- Category Database contract -------------------------------------------
+//------------------------------------ Budget Database contract ----------------------------------------------
+public protocol AddBudgetDatabaseContract {
+    func addBudget(user: User, budget: Budget, success: @escaping (String) -> Void, failure: @escaping (Error) -> Void)
+}
+//------------------------------------------------------------------------------------------------------------
+
+//------------------------------------ MonthlyAnalysis Database contract --------------------------------------
+public protocol AddMonthlyAnalysisTransactionDatabaseContract {
+    func addMonthlyAnalysisTransaction(user: User, transasction: Transaction, success: @escaping (String) -> Void, failure: @escaping (Error) -> Void)
+}
+//-------------------------------------------------------------------------------------------------------------
+
+//------------------------------------ Category Database contract --------------------------------------------
 public protocol GetCategoryDatabaseContract {
     
     func getCategory(user: User, success: @escaping ([ExpendatureCategory]) -> Void, failure: @escaping (Error) -> Void)

@@ -8,7 +8,7 @@
 import Foundation
 import VTComponents
 
-public class UpdateUserRequest: ZRequest {
+public class UpdateUserRequest: Request {
     
     public var user: User
     public var column: String
@@ -17,7 +17,6 @@ public class UpdateUserRequest: ZRequest {
         self.user = user
         self.column = column
         self.update = update
-        super.init(zuid: "")
     }
 }
 

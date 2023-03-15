@@ -8,7 +8,7 @@
 import Foundation
 import VTComponents
 
-public class DeleteTransactionRequest: ZRequest {
+public class DeleteTransactionRequest: Request {
     
     var user: User
     var transaction: Transaction
@@ -19,7 +19,6 @@ public class DeleteTransactionRequest: ZRequest {
         self.transaction = transaction
         self.columnName = columnName
         self.columnValue = columnValue
-        super.init(zuid: " ")
     }
 }
 

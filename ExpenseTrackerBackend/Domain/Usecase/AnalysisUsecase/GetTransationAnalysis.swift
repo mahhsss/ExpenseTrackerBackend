@@ -8,7 +8,7 @@
 import Foundation
 import VTComponents
 
-public class GetTransactionAnalysisRequest: ZRequest {
+public class GetTransactionAnalysisRequest: Request {
     
     public var user: User
     public var startDate: String
@@ -18,7 +18,6 @@ public class GetTransactionAnalysisRequest: ZRequest {
         self.user = user
         self.startDate = startDate
         self.endDate = endDate
-        super.init(zuid: "")
     }
 }
 

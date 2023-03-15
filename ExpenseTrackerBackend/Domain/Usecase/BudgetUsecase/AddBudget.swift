@@ -9,14 +9,13 @@ import Foundation
 import VTComponents
 
 
-public class AddBudgetRequest: ZRequest {
+public class AddBudgetRequest: Request {
     
     var user: User
     var budget: Budget
     public init(user: User, budget: Budget) {
         self.user = user
         self.budget = budget
-        super.init(zuid: "")
     }
 }
 

@@ -37,11 +37,10 @@
 		2AA2457029A8A661007BBE2D /* AddUserDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA2456F29A8A661007BBE2D /* AddUserDatabase.swift */; };
 		2AA2457529A8A6B9007BBE2D /* UserSignInDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA2457429A8A6B9007BBE2D /* UserSignInDataManager.swift */; };
 		2AA2457729A8A6C8007BBE2D /* UserSignUpDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA2457629A8A6C8007BBE2D /* UserSignUpDataManager.swift */; };
-		2AA2457929A8A6F7007BBE2D /* UserDataManagerContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA2457829A8A6F7007BBE2D /* UserDataManagerContract.swift */; };
+		2AA2457929A8A6F7007BBE2D /* DatabaseContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA2457829A8A6F7007BBE2D /* DatabaseContract.swift */; };
 		2AA2457E29A8A744007BBE2D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA2457D29A8A744007BBE2D /* User.swift */; };
 		2AA2458029A8A76D007BBE2D /* UserSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA2457F29A8A76D007BBE2D /* UserSignIn.swift */; };
 		2AA2458229A8A77A007BBE2D /* UserSignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA2458129A8A77A007BBE2D /* UserSignUp.swift */; };
-		2AA2458429A8A784007BBE2D /* UserSignOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA2458329A8A784007BBE2D /* UserSignOut.swift */; };
 		2AA2458729A8A7ED007BBE2D /* UserDataContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA2458629A8A7ED007BBE2D /* UserDataContract.swift */; };
 		2AA2458929ACAF75007BBE2D /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA2458829ACAF75007BBE2D /* Transaction.swift */; };
 		2AA2458B29ACAF7E007BBE2D /* Analysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA2458A29ACAF7E007BBE2D /* Analysis.swift */; };
@@ -97,11 +96,10 @@
 		2AA2456F29A8A661007BBE2D /* AddUserDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserDatabase.swift; sourceTree = "<group>"; };
 		2AA2457429A8A6B9007BBE2D /* UserSignInDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSignInDataManager.swift; sourceTree = "<group>"; };
 		2AA2457629A8A6C8007BBE2D /* UserSignUpDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSignUpDataManager.swift; sourceTree = "<group>"; };
-		2AA2457829A8A6F7007BBE2D /* UserDataManagerContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataManagerContract.swift; sourceTree = "<group>"; };
+		2AA2457829A8A6F7007BBE2D /* DatabaseContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseContract.swift; sourceTree = "<group>"; };
 		2AA2457D29A8A744007BBE2D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2AA2457F29A8A76D007BBE2D /* UserSignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSignIn.swift; sourceTree = "<group>"; };
 		2AA2458129A8A77A007BBE2D /* UserSignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSignUp.swift; sourceTree = "<group>"; };
-		2AA2458329A8A784007BBE2D /* UserSignOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSignOut.swift; sourceTree = "<group>"; };
 		2AA2458629A8A7ED007BBE2D /* UserDataContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataContract.swift; sourceTree = "<group>"; };
 		2AA2458829ACAF75007BBE2D /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		2AA2458A29ACAF7E007BBE2D /* Analysis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analysis.swift; sourceTree = "<group>"; };
@@ -137,61 +135,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2A16148D29BB09E3005E999E /* AnalysisContract */ = {
-			isa = PBXGroup;
-			children = (
-				2A16148E29BB0A36005E999E /* AnalysisDataContract.swift */,
-			);
-			path = AnalysisContract;
-			sourceTree = "<group>";
-		};
-		2A16149029BB0F44005E999E /* AnalysisDataManager */ = {
-			isa = PBXGroup;
-			children = (
-				2A16149129BB0F60005E999E /* GetTransactionAnalysisDataManager.swift */,
-			);
-			path = AnalysisDataManager;
-			sourceTree = "<group>";
-		};
-		2A16149329BB1470005E999E /* AnalysisDatabase */ = {
-			isa = PBXGroup;
-			children = (
-				2A16149629BB14F7005E999E /* GetTransactionAnalysisDatabase.swift */,
-			);
-			path = AnalysisDatabase;
-			sourceTree = "<group>";
-		};
 		2A7B9F6C29C1920100A9BFAE /* BudgetUsecase */ = {
 			isa = PBXGroup;
 			children = (
 				2A7B9F6D29C1922200A9BFAE /* AddBudget.swift */,
 			);
 			path = BudgetUsecase;
-			sourceTree = "<group>";
-		};
-		2A7B9F6F29C1931E00A9BFAE /* BudgetContract */ = {
-			isa = PBXGroup;
-			children = (
-				2A7B9F7029C1933200A9BFAE /* BudgetDataContract.swift */,
-			);
-			path = BudgetContract;
-			sourceTree = "<group>";
-		};
-		2A7B9F7229C1947700A9BFAE /* BudgetDataManager */ = {
-			isa = PBXGroup;
-			children = (
-				2A7B9F7329C1949800A9BFAE /* AddBudgetDataManager.swift */,
-			);
-			path = BudgetDataManager;
-			sourceTree = "<group>";
-		};
-		2A7B9F7529C1958F00A9BFAE /* BudgetDatabase */ = {
-			isa = PBXGroup;
-			children = (
-				2A7B9F7829C195F800A9BFAE /* BudgetDatabase.swift */,
-				2A7B9F7629C195DF00A9BFAE /* AddBudgetDatabase.swift */,
-			);
-			path = BudgetDatabase;
 			sourceTree = "<group>";
 		};
 		2AA2453C29A8A2F4007BBE2D = {
@@ -252,11 +201,22 @@
 		2AA2456729A8A5F5007BBE2D /* Database */ = {
 			isa = PBXGroup;
 			children = (
-				2A7B9F7529C1958F00A9BFAE /* BudgetDatabase */,
-				2A16149329BB1470005E999E /* AnalysisDatabase */,
-				2AADB00829B60B8800F7962D /* CategoryDatabase */,
-				2AA2456A29A8A61E007BBE2D /* UserDatabase */,
-				2AA2456929A8A615007BBE2D /* TransactionDatabase */,
+				2A7B9F7829C195F800A9BFAE /* BudgetDatabase.swift */,
+				2A7B9F7629C195DF00A9BFAE /* AddBudgetDatabase.swift */,
+				2A16149629BB14F7005E999E /* GetTransactionAnalysisDatabase.swift */,
+				2AADB00D29B6194000F7962D /* CategoryDatabase.swift */,
+				2AADB00929B618BA00F7962D /* GetCategoryDatabaseService.swift */,
+				2A16147F29B76891005E999E /* AddTransactionDatabaseService.swift */,
+				2AADAFF029B0CCBE00F7962D /* TransactionDatabase.swift */,
+				2AADAFEE29B0CC1200F7962D /* AddTransactionDatabase.swift */,
+				2A16148B29B8B780005E999E /* GetAllTransactionDatabase.swift */,
+				2A7B9F4C29C048CD00A9BFAE /* UpdateTransactionDatabase.swift */,
+				2A7B9F6029C0A0E900A9BFAE /* DeleteTransactionDatabase.swift */,
+				2A7B9F8529C1BF5F00A9BFAE /* AddMonthlyAnalysisTransactionDatabase.swift */,
+				2AA2456D29A8A657007BBE2D /* UserDatabase.swift */,
+				2AA2456F29A8A661007BBE2D /* AddUserDatabase.swift */,
+				2AADAFE229AF3C8A00F7962D /* GetUserDatabase.swift */,
+				2A7B9F5829C0810300A9BFAE /* UpdateUserDatabase.swift */,
 				2AA2456B29A8A630007BBE2D /* Database.swift */,
 			);
 			path = Database;
@@ -265,78 +225,39 @@
 		2AA2456829A8A601007BBE2D /* DataManager */ = {
 			isa = PBXGroup;
 			children = (
-				2A7B9F7229C1947700A9BFAE /* BudgetDataManager */,
-				2A16149029BB0F44005E999E /* AnalysisDataManager */,
-				2AADB00529B604DF00F7962D /* CategoryDataManager */,
-				2AA2457329A8A699007BBE2D /* UserDataManager */,
-				2AA2457229A8A688007BBE2D /* TransactionDataManager */,
-				2AA2457129A8A682007BBE2D /* Contract */,
-			);
-			path = DataManager;
-			sourceTree = "<group>";
-		};
-		2AA2456929A8A615007BBE2D /* TransactionDatabase */ = {
-			isa = PBXGroup;
-			children = (
-				2AADAFF029B0CCBE00F7962D /* TransactionDatabase.swift */,
-				2AADAFEE29B0CC1200F7962D /* AddTransactionDatabase.swift */,
-				2A16148B29B8B780005E999E /* GetAllTransactionDatabase.swift */,
-				2A7B9F4C29C048CD00A9BFAE /* UpdateTransactionDatabase.swift */,
-				2A7B9F6029C0A0E900A9BFAE /* DeleteTransactionDatabase.swift */,
-				2A7B9F8529C1BF5F00A9BFAE /* AddMonthlyAnalysisTransactionDatabase.swift */,
-			);
-			path = TransactionDatabase;
-			sourceTree = "<group>";
-		};
-		2AA2456A29A8A61E007BBE2D /* UserDatabase */ = {
-			isa = PBXGroup;
-			children = (
-				2AA2456D29A8A657007BBE2D /* UserDatabase.swift */,
-				2AA2456F29A8A661007BBE2D /* AddUserDatabase.swift */,
-				2AADAFE229AF3C8A00F7962D /* GetUserDatabase.swift */,
-				2A7B9F5829C0810300A9BFAE /* UpdateUserDatabase.swift */,
-			);
-			path = UserDatabase;
-			sourceTree = "<group>";
-		};
-		2AA2457129A8A682007BBE2D /* Contract */ = {
-			isa = PBXGroup;
-			children = (
-				2AA2457829A8A6F7007BBE2D /* UserDataManagerContract.swift */,
-			);
-			path = Contract;
-			sourceTree = "<group>";
-		};
-		2AA2457229A8A688007BBE2D /* TransactionDataManager */ = {
-			isa = PBXGroup;
-			children = (
+				2A7B9F7329C1949800A9BFAE /* AddBudgetDataManager.swift */,
+				2A16149129BB0F60005E999E /* GetTransactionAnalysisDataManager.swift */,
+				2AADB00629B604FC00F7962D /* GetCategoryDataManager.swift */,
+				2A16147D29B7645C005E999E /* AddCategoryDataManager.swift */,
+				2AA2457429A8A6B9007BBE2D /* UserSignInDataManager.swift */,
+				2AA2457629A8A6C8007BBE2D /* UserSignUpDataManager.swift */,
+				2A7B9F5629C06C2600A9BFAE /* UpdateUserDataManager.swift */,
 				2AADAFF229B1DE6700F7962D /* AddTransactionDataManager.swift */,
 				2A16148929B8B586005E999E /* GetTransactionDataManager.swift */,
 				2A7B9F4A29C040A200A9BFAE /* UpdateTransactionDataManager.swift */,
 				2A7B9F5E29C09FCE00A9BFAE /* DeleteTransactionDataManager.swift */,
 				2A7B9F8329C1BE8300A9BFAE /* AddMonthlyAnalysisTransactionDataManager.swift */,
+				2AA2457129A8A682007BBE2D /* Contract */,
 			);
-			path = TransactionDataManager;
+			path = DataManager;
 			sourceTree = "<group>";
 		};
-		2AA2457329A8A699007BBE2D /* UserDataManager */ = {
+		2AA2457129A8A682007BBE2D /* Contract */ = {
 			isa = PBXGroup;
 			children = (
-				2AA2457429A8A6B9007BBE2D /* UserSignInDataManager.swift */,
-				2AA2457629A8A6C8007BBE2D /* UserSignUpDataManager.swift */,
-				2A7B9F5629C06C2600A9BFAE /* UpdateUserDataManager.swift */,
+				2AA2457829A8A6F7007BBE2D /* DatabaseContract.swift */,
 			);
-			path = UserDataManager;
+			path = Contract;
 			sourceTree = "<group>";
 		};
 		2AA2457A29A8A71B007BBE2D /* Contract */ = {
 			isa = PBXGroup;
 			children = (
-				2A7B9F6F29C1931E00A9BFAE /* BudgetContract */,
-				2A16148D29BB09E3005E999E /* AnalysisContract */,
-				2AADB00229B5FF8500F7962D /* CategoryContract */,
-				2AADAFF429B1E51700F7962D /* TransactionContract */,
-				2AA2458529A8A7D9007BBE2D /* UserContract */,
+				2A7B9F7029C1933200A9BFAE /* BudgetDataContract.swift */,
+				2A16148E29BB0A36005E999E /* AnalysisDataContract.swift */,
+				2AADB00329B5FF9C00F7962D /* CategoryDataContract.swift */,
+				2AADAFF529B1E54A00F7962D /* TransactionDataContract.swift */,
+				2AA2458629A8A7ED007BBE2D /* UserDataContract.swift */,
 			);
 			path = Contract;
 			sourceTree = "<group>";
@@ -365,58 +286,14 @@
 			path = Entity;
 			sourceTree = "<group>";
 		};
-		2AA2458529A8A7D9007BBE2D /* UserContract */ = {
-			isa = PBXGroup;
-			children = (
-				2AA2458629A8A7ED007BBE2D /* UserDataContract.swift */,
-			);
-			path = UserContract;
-			sourceTree = "<group>";
-		};
 		2AA2458E29ACAFA7007BBE2D /* UserUsecase */ = {
 			isa = PBXGroup;
 			children = (
-				2AA2458329A8A784007BBE2D /* UserSignOut.swift */,
 				2AA2458129A8A77A007BBE2D /* UserSignUp.swift */,
 				2AA2457F29A8A76D007BBE2D /* UserSignIn.swift */,
 				2A7B9F5429C0688900A9BFAE /* UpdateUser.swift */,
 			);
 			path = UserUsecase;
-			sourceTree = "<group>";
-		};
-		2AADAFF429B1E51700F7962D /* TransactionContract */ = {
-			isa = PBXGroup;
-			children = (
-				2AADAFF529B1E54A00F7962D /* TransactionDataContract.swift */,
-			);
-			path = TransactionContract;
-			sourceTree = "<group>";
-		};
-		2AADB00229B5FF8500F7962D /* CategoryContract */ = {
-			isa = PBXGroup;
-			children = (
-				2AADB00329B5FF9C00F7962D /* CategoryDataContract.swift */,
-			);
-			path = CategoryContract;
-			sourceTree = "<group>";
-		};
-		2AADB00529B604DF00F7962D /* CategoryDataManager */ = {
-			isa = PBXGroup;
-			children = (
-				2AADB00629B604FC00F7962D /* GetCategoryDataManager.swift */,
-				2A16147D29B7645C005E999E /* AddCategoryDataManager.swift */,
-			);
-			path = CategoryDataManager;
-			sourceTree = "<group>";
-		};
-		2AADB00829B60B8800F7962D /* CategoryDatabase */ = {
-			isa = PBXGroup;
-			children = (
-				2AADB00D29B6194000F7962D /* CategoryDatabase.swift */,
-				2AADB00929B618BA00F7962D /* GetCategoryDatabaseService.swift */,
-				2A16147F29B76891005E999E /* AddTransactionDatabaseService.swift */,
-			);
-			path = CategoryDatabase;
 			sourceTree = "<group>";
 		};
 		2AD9238B29ACC1D5009F206D /* TransactionUsecase */ = {
@@ -573,7 +450,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A7B9F8229C1BD1B00A9BFAE /* AddMonthlyAnalysisTransaction.swift in Sources */,
-				2AA2458429A8A784007BBE2D /* UserSignOut.swift in Sources */,
 				2A7B9F7729C195DF00A9BFAE /* AddBudgetDatabase.swift in Sources */,
 				2AD9238F29ACC201009F206D /* GetAllTransaction.swift in Sources */,
 				2AD9239929ACC2A3009F206D /* UpdateTransaction.swift in Sources */,
@@ -615,7 +491,7 @@
 				2A7B9F6129C0A0E900A9BFAE /* DeleteTransactionDatabase.swift in Sources */,
 				2AA2456C29A8A630007BBE2D /* Database.swift in Sources */,
 				2AA2457529A8A6B9007BBE2D /* UserSignInDataManager.swift in Sources */,
-				2AA2457929A8A6F7007BBE2D /* UserDataManagerContract.swift in Sources */,
+				2AA2457929A8A6F7007BBE2D /* DatabaseContract.swift in Sources */,
 				2A16148F29BB0A36005E999E /* AnalysisDataContract.swift in Sources */,
 				2AA2456E29A8A657007BBE2D /* UserDatabase.swift in Sources */,
 				2AADAFF129B0CCBE00F7962D /* TransactionDatabase.swift in Sources */,

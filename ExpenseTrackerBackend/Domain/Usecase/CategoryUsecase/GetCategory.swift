@@ -8,12 +8,11 @@
 import Foundation
 import VTComponents
 
-public class GetCategoryRequest: ZRequest {
+public class GetCategoryRequest: Request {
     
     var user: User
     public init(user: User) {
         self.user = user
-        super.init(zuid: "")
     }
 }
 

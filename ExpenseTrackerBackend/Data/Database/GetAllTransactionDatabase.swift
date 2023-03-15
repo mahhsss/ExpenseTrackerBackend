@@ -18,7 +18,6 @@ extension GetAllTransactionDatabase: GetAllTransactionDatabaseContract {
     public func getTransaction(user: User, success: @escaping ([Transaction]) -> Void, failure: @escaping (Error) -> Void) {
         let result = database.getArrayData(tableName: "\"Transaction\"", column: transactionDatabaseColumn, columnName: "userId", columnValue: user.userId)
         var transactions: [Transaction] = []
-        print("\n\n\n\n\n\(result[0])\n\n\n\n\n\n")
         for row in result {
             var transactionType: TransactionType = .spending
             var currencyType: CurrencyType = .bankTransaction

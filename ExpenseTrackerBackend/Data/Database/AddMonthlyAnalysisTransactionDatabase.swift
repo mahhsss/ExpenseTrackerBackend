@@ -33,6 +33,8 @@ extension AddMonthlyAnalysisTransactionDatabase: AddMonthlyAnalysisTransactionDa
                 spentAmount = row["spentAmount"] as! Int
                 budgetAmount = row["budgetAmount"] as! Int
                 monthlyAnalysisId = row["monthlyAnalysisId"] as! Int
+                values["budgetAmount"] = budgetAmount
+                break
             }
         }
         var done: Bool = false

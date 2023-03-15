@@ -8,12 +8,11 @@
 import Foundation
 import VTComponents
 
-public class GetAllTransactionRequest: ZRequest {
+public class GetAllTransactionRequest: Request {
     
     public var user: User
     public init(user: User) {
         self.user = user
-        super.init(zuid: "")
     }
 }
 

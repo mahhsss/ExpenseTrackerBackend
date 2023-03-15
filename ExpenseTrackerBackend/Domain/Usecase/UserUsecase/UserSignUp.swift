@@ -8,12 +8,11 @@
 import Foundation
 import VTComponents
 
-public class AddNewUserRequest: ZRequest {
+public class AddNewUserRequest: Request {
     
     var user: User
     public init(user: User) {
         self.user = user
-        super.init(zuid: " ")
     }
 }
 

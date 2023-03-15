@@ -10,10 +10,10 @@ import Foundation
 public class BudgetDatabase {
     
     let columnName: [String] = ["monthlyAnalysisId", "userId", "budgetAmount", "monthAndYear", "spentAmount"]
-    let columnType: [String] = ["integer", "integer", "integer", "text", "integer"]
+    let columnType: [String] = ["integer", "integer", "integer", "datetime", "integer"]
     let primaryKey: [String] = ["monthlyAnalysisId"]
     let autoIncrement: [String] = ["monthlyAnalysisId"]
-    let uniqueKey: [String] = ["monthAndYear"]
+    let uniqueKey: [String] = []
     let database: Database
     public var budgetDatabaseColumn: [Column] = []
     
@@ -37,6 +37,6 @@ public class BudgetDatabase {
         }
         
         database = Database()
-        database.createTable(tableName: "Budget", columns: budgetDatabaseColumn)
+        database.createTable(tableName: "Budget", columns: budgetDatabaseColumn, constraint: ", constraint user_budget unique(userId,monthAndYear)")
     }
 }

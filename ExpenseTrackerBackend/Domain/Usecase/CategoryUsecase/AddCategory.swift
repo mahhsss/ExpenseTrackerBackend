@@ -8,14 +8,13 @@
 import Foundation
 import VTComponents
 
-public class AddCategoryRequest: ZRequest {
+public class AddCategoryRequest: Request {
     
     var user: User
     var category: ExpendatureCategory
     public init(user: User, category: ExpendatureCategory) {
         self.user = user
         self.category = category
-        super.init(zuid: "")
     }
 }
 

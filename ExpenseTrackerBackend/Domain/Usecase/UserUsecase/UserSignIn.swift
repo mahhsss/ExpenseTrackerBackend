@@ -9,14 +9,13 @@ import Foundation
 import VTComponents
 
 
-public class UserLoginRequest: ZRequest {
+public class UserLoginRequest: Request {
     
     let emailId: String
     let password: String
     public init(emailId: String, password: String) {
         self.emailId = emailId
         self.password = password
-        super.init(zuid: " ")
     }
 }
 

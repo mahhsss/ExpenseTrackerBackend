@@ -15,8 +15,8 @@ public class GetTransactionAnalysisDataManager: GetTransactionAnalysisDataContra
         self.database = database
     }
     
-    public func getTransactionAnalysis(user: User, startDate: String, endDate: String, success: @escaping ([Transaction]) -> Void, failure: @escaping (Error) -> Void) {
-        self.database.getTransactionAnalysis(user: user, startDate: startDate, endDate: endDate) { [weak self] (response) in
+    public func getTransactionAnalysis(userId: Int, startDate: String, endDate: String, success: @escaping ([Transaction]) -> Void, failure: @escaping (Error) -> Void) {
+        self.database.getTransactionAnalysis(userId: userId, startDate: startDate, endDate: endDate) { [weak self] (response) in
             self?.success(callback: success, response: response)
         } failure: { [weak self] (error) in
             self?.failure(callback: failure, error: error)

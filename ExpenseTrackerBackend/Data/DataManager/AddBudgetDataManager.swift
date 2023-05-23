@@ -15,8 +15,8 @@ public class AddBudgetDataManager: AddBudgetDataContract {
         self.database = database
     }
     
-    public func addBudget(user: User, budget: Budget, success: @escaping (String) -> Void, failure: @escaping (Error) -> Void) {
-        self.database.addBudget(user: user, budget: budget) { [weak self] (response) in
+    public func addBudget(userId: Int, budget: Budget, success: @escaping (String) -> Void, failure: @escaping (Error) -> Void) {
+        self.database.addBudget(userId: userId, budget: budget) { [weak self] (response) in
             self?.success(callback: success, response: response)
         } failure: { [weak self] (error) in
             self?.failure(callback: failure, error: error)

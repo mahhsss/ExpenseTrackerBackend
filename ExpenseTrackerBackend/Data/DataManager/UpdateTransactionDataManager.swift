@@ -16,8 +16,8 @@ public class UpdateTransactionDataManager: UpdateTransactionDataContract {
         self.database = database
     }
     
-    public func updateTransaction(user: User, transaction: Transaction, column: String, update: Any, success: @escaping (String) -> Void, failure: @escaping (Error) -> Void) {
-        self.database.updateTransaction(user: user, transaction: transaction, column: column, update: update) { [weak self] (response) in
+    public func updateTransaction(userId: Int, transaction: Transaction, column: String, update: Any, success: @escaping (String) -> Void, failure: @escaping (Error) -> Void) {
+        self.database.updateTransaction(userId: userId, transaction: transaction, column: column, update: update) { [weak self] (response) in
             self?.sucess(callback: success, response: response)
         } failure: { [weak self] (error) in
             self?.failure(callback: failure, error: error)

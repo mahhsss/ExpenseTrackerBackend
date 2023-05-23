@@ -14,8 +14,8 @@ public class AddCategoryDatamanager: AddCategoryDataContract {
         self.database = database
     }
 
-    public func addCategory(user: User, category: ExpendatureCategory, success: @escaping (String) -> Void, failure: @escaping (Error) -> Void) {
-        database.addCategory(user: user, category: category) { [weak self] (response) in
+    public func addCategory(userId: Int, category: ExpendatureCategory, success: @escaping (String) -> Void, failure: @escaping (Error) -> Void) {
+        database.addCategory(userId: userId, category: category) { [weak self] (response) in
             self?.success(callback: success, response: response)
         } failure: { [weak self] (error) in
             self?.failure(callback: failure, error: error)

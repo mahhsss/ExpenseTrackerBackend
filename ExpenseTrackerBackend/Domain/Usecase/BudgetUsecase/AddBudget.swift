@@ -11,10 +11,10 @@ import VTComponents
 
 public class AddBudgetRequest: Request {
     
-    var user: User
+    var userId: Int
     var budget: Budget
-    public init(user: User, budget: Budget) {
-        self.user = user
+    public init(userId: Int, budget: Budget) {
+        self.userId = userId
         self.budget = budget
     }
 }
@@ -45,7 +45,7 @@ public class AddBudget: ZUsecase<AddBudgetRequest, AddBudgetResponse, AddBudgetE
     }
     
     public override func run(request: AddBudgetRequest, success: @escaping (AddBudgetResponse) -> Void, failure: @escaping (AddBudgetError) -> Void) {
-        self.dataManager.addBudget(user: request.user, budget: request.budget) { [weak self] (response) in
+        self.dataManager.addBudget(userId: request.userId, budget: request.budget) { [weak self] (response) in
             self?.success(callback: success, response: response)
         } failure: { [weak self] (error) in
             self?.failure(error: error, callback: failure)

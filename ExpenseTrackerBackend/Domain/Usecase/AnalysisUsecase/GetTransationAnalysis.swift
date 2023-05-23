@@ -10,12 +10,12 @@ import VTComponents
 
 public class GetTransactionAnalysisRequest: Request {
     
-    public var user: User
+    public var userId: Int
     public var startDate: String
     public var endDate: String
     
-    public init(user: User, startDate: String, endDate: String) {
-        self.user = user
+    public init(userId: Int, startDate: String, endDate: String) {
+        self.userId = userId
         self.startDate = startDate
         self.endDate = endDate
     }
@@ -53,7 +53,7 @@ public class GetTransactionAnalysis: ZUsecase<GetTransactionAnalysisRequest, Get
     public override func run(request: GetTransactionAnalysisRequest, success: @escaping (GetTransactionAnalysisResponse) -> Void, failure: @escaping (GetTransactionAnalysisError) -> Void) {
         
         
-        self.dataManager.getTransactionAnalysis(user: request.user, startDate: request.startDate, endDate: request.endDate) { [weak self] (response) in
+        self.dataManager.getTransactionAnalysis(userId: request.userId, startDate: request.startDate, endDate: request.endDate) { [weak self] (response) in
             self?.success(callback: success, response: response)
         } failure: { [weak self] (error) in
             self?.failure(callback: failure, error: error)
@@ -85,7 +85,7 @@ public class GetTransactionAnalysis: ZUsecase<GetTransactionAnalysisRequest, Get
                 totalExpense += item.amount
             }
         }
-        var transactionResponse = GetTransactionAnalysisResponse(transaction: response, analysis: analysis, totalExpense: totalExpense)
+        let transactionResponse = GetTransactionAnalysisResponse(transaction: response, analysis: analysis, totalExpense: totalExpense)
         invokeSuccess(callback: callback, response: transactionResponse)
     }
     private func failure(callback: @escaping (GetTransactionAnalysisError) -> Void, error: Error) {

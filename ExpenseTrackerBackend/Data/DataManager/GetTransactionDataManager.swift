@@ -16,8 +16,8 @@ public class GetAllTransactionDataManager: GetAllTransactionDataProtocol {
         self.database = database
     }
     
-    public func getAllTransaction(user: User, success: @escaping ([Transaction]) -> Void, failure: @escaping (Error) -> Void) {
-        self.database.getTransaction(user: user) { [weak self] (response) in
+    public func getAllTransaction(userId: Int, success: @escaping ([Transaction]) -> Void, failure: @escaping (Error) -> Void) {
+        self.database.getTransaction(userId: userId) { [weak self] (response) in
             self?.success(callback: success, response: response)
         } failure: { [weak self] (error) in
             self?.failure(callback: failure, error: error)

@@ -10,9 +10,9 @@ import VTComponents
 
 public class GetAllTransactionRequest: Request {
     
-    public var user: User
-    public init(user: User) {
-        self.user = user
+    public var userId: Int
+    public init(userId: Int) {
+        self.userId = userId
     }
 }
 
@@ -43,7 +43,7 @@ public class GetAllTransaction: ZUsecase<GetAllTransactionRequest, GetAllTransac
     }
     
     public override func run(request: GetAllTransactionRequest, success: @escaping (GetAllTransactionResponse) -> Void, failure: @escaping (GetAllTransactionError) -> Void) {
-        self.dataManager.getAllTransaction(user: request.user) { [weak self] (response) in
+        self.dataManager.getAllTransaction(userId: request.userId) { [weak self] (response) in
             self?.success(callback: success, response: response)
         } failure: { [weak self] (error) in
             self?.failure(callback: failure, error: error)

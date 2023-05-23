@@ -15,11 +15,11 @@ public class AddTransactionDataDatabaseService: TransactionDatabase {
 
 extension AddTransactionDataDatabaseService:  AddTransactionDatabaseContract{
     
-    public func addTransaction(user: User, transaction: Transaction, success: @escaping (String) -> Void, failure: @escaping (Error) -> Void) {
+    public func addTransaction(userId: Int, transaction: Transaction, success: @escaping (String) -> Void, failure: @escaping (Error) -> Void) {
         
         var value: [String: Any] = [:]
         value["transactionId"] = transaction.transactionId
-        value["userId"] = user.userId
+        value["userId"] = userId
         value["amount"] = transaction.amount
         value["transactionType"] = transaction.transactionType.rawValue
         value["currencyType"] = transaction.currencyType.rawValue

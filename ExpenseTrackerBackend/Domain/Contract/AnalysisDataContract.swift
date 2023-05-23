@@ -9,5 +9,5 @@ import Foundation
 
 
 public protocol GetTransactionAnalysisDataContract {
-    func getTransactionAnalysis(user: User, startDate: String, endDate: String, success: @escaping ([Transaction]) -> Void, failure: @escaping (Error) -> Void)
+    func getTransactionAnalysis(userId: Int, startDate: String, endDate: String, success: @escaping ([Transaction]) -> Void, failure: @escaping (Error) -> Void)
 }

@@ -15,7 +15,7 @@ public class UpdateTranastionDatabaseServise: TransactionDatabase {
 
 extension UpdateTranastionDatabaseServise: UpdateTranasctionDatabaseContract {
     
-    public func updateTransaction(user: User, transaction: Transaction, column: String, update: Any, success: @escaping (String) -> Void, failure: @escaping (Error) -> Void) {
+    public func updateTransaction(userId: Int, transaction: Transaction, column: String, update: Any, success: @escaping (String) -> Void, failure: @escaping (Error) -> Void) {
         let result = database.updateValue(tableName: "\"Transaction\"", columns: transactionDatabaseColumn, values: [column: update], idName: "transactionId", id: transaction.transactionId)
         
         if result {

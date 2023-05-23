@@ -10,9 +10,9 @@ import VTComponents
 
 public class GetCategoryRequest: Request {
     
-    var user: User
-    public init(user: User) {
-        self.user = user
+    var userId: Int
+    public init(userId: Int) {
+        self.userId = userId
     }
 }
 
@@ -42,7 +42,7 @@ public class GetCategory: ZUsecase<GetCategoryRequest, GetCategoryResponse, GetC
     }
     
     public override func run(request: GetCategoryRequest, success: @escaping (GetCategoryResponse) -> Void, failure: @escaping (GetCategoryError) -> Void) {
-        dataManager.getCategory(user: request.user) { [weak self] (response) in
+        dataManager.getCategory(userId: request.userId) { [weak self] (response) in
             self?.success(callback: success, response: response)
         } failure: { [weak self] (error) in
             self?.failure(callback: failure, error: error)

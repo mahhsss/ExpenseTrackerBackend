@@ -15,8 +15,8 @@ public class AddNewTransactionDataManager: AddTransactionDataContract {
         self.database = database
     }
     
-    public func addTransaction(user: User, transaction: Transaction, success: @escaping (String) -> Void, failure: @escaping (Error) -> Void) {
-        database.addTransaction(user: user, transaction: transaction) { [weak self] (response) in
+    public func addTransaction(userId: Int, transaction: Transaction, success: @escaping (String) -> Void, failure: @escaping (Error) -> Void) {
+        database.addTransaction(userId: userId, transaction: transaction) { [weak self] (response) in
             self?.success(callback: success, response: response)
         } failure: { [weak self] (error) in
             self?.failure(callback: failure, error: error)

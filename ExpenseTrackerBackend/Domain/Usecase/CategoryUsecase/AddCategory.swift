@@ -10,10 +10,10 @@ import VTComponents
 
 public class AddCategoryRequest: Request {
     
-    var user: User
+    var userId: Int
     var category: ExpendatureCategory
-    public init(user: User, category: ExpendatureCategory) {
-        self.user = user
+    public init(userId: Int, category: ExpendatureCategory) {
+        self.userId = userId
         self.category = category
     }
 }
@@ -43,7 +43,7 @@ public class AddCategory: ZUsecase<AddCategoryRequest, AddCategoryResponse, AddC
     }
     
     public override func run(request: AddCategoryRequest, success: @escaping (AddCategoryResponse) -> Void, failure: @escaping (AddCategoryError) -> Void) {
-        dataManager.addCategory(user: request.user, category: request.category) { [weak self] (response) in
+        dataManager.addCategory(userId: request.userId, category: request.category) { [weak self] (response) in
             self?.success(callback: success, response: response)
         } failure: { [weak self] (error) in
             self?.failure(error: error, callback: failure)

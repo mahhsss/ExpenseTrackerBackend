@@ -9,5 +9,5 @@ import Foundation
 
 public protocol AddBudgetDataContract {
     
-    func addBudget(user: User, budget: Budget, success: @escaping (String) -> Void, failure: @escaping (Error) -> Void)
+    func addBudget(userId: Int, budget: Budget, success: @escaping (String) -> Void, failure: @escaping (Error) -> Void)
 }

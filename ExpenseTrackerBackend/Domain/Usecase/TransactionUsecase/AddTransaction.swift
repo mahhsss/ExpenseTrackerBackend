@@ -10,10 +10,10 @@ import VTComponents
 
 public class AddNewTransactionRequest: Request {
     
-    var user: User
+    var userId: Int
     var transaction: Transaction
-    public init(user: User, transaction: Transaction) {
-        self.user = user
+    public init(userId: Int, transaction: Transaction) {
+        self.userId = userId
         self.transaction = transaction
     }
 }
@@ -44,7 +44,7 @@ public class AddNewTransaction: ZUsecase<AddNewTransactionRequest, AddNewTransac
     }
     
     public override func run(request: AddNewTransactionRequest, success: @escaping (AddNewTransactionResponse) -> Void, failure: @escaping (AddNewTransactionError) -> Void) {
-        dataManager.addTransaction(user: request.user, transaction: request.transaction) { [weak self] (response) in
+        dataManager.addTransaction(userId: request.userId, transaction: request.transaction) { [weak self] (response) in
             self?.success(callback: success, response: response)
         } failure: { [weak self] (error) in
             self?.failure(callback: failure, error: error)

@@ -15,8 +15,8 @@ public class GetCategoryDataManagerServise: GetCategoryDataProtocol {
         self.database = database
     }
     
-    public func getCategory(user: User, success: @escaping ([ExpendatureCategory]) -> Void, failure: @escaping (Error) -> Void) {
-        database.getCategory(user: user) { [weak self] (response) in
+    public func getCategory(userId: Int, success: @escaping ([ExpendatureCategory]) -> Void, failure: @escaping (Error) -> Void) {
+        database.getCategory(userId: userId) { [weak self] (response) in
             self?.success(callback: success, response: response)
         } failure: { [weak self] (error) in
             self?.failure(callback: failure, error: error)

@@ -15,10 +15,10 @@ public class AddCategoryDatabaseService: CategoryDatabase {
 
 extension AddCategoryDatabaseService: AddCategoryDatabaseContract {
     
-    public func addCategory(user: User, category: ExpendatureCategory, success: @escaping (String) -> Void, failure: @escaping (Error) -> Void) {
+    public func addCategory(userId: Int, category: ExpendatureCategory, success: @escaping (String) -> Void, failure: @escaping (Error) -> Void) {
         var value: [String: Any] = [:]
         value["categoryId"] = category.categoryId
-        value["userId"] = user.userId
+        value["userId"] = userId
         value["categoryname"] = category.categoryname
         let result = database.addValue(tableName: "Category", columns: categoryDatabaseColumn, values: value)
         

@@ -9,10 +9,10 @@ import Foundation
 
 public protocol GetCategoryDataProtocol {
     
-    func getCategory(user: User, success: @escaping ([ExpendatureCategory]) -> Void, failure: @escaping (Error) -> Void)
+    func getCategory(userId: Int, success: @escaping ([ExpendatureCategory]) -> Void, failure: @escaping (Error) -> Void)
 }
 
 public protocol AddCategoryDataContract {
     
-    func addCategory(user: User, category: ExpendatureCategory, success: @escaping (String) -> Void, failure: @escaping (Error) -> Void)
+    func addCategory(userId: Int, category: ExpendatureCategory, success: @escaping (String) -> Void, failure: @escaping (Error) -> Void)
 }

@@ -15,10 +15,10 @@ public class AddMonthlyAnalysisTransactionDatabase: BudgetDatabase {
 
 extension AddMonthlyAnalysisTransactionDatabase: AddMonthlyAnalysisTransactionDatabaseContract {
     
-    public func addMonthlyAnalysisTransaction(user: User, transasction: Transaction, success: @escaping (String) -> Void, failure: @escaping (Error) -> Void) {
+    public func addMonthlyAnalysisTransaction(userId: Int, transasction: Transaction, success: @escaping (String) -> Void, failure: @escaping (Error) -> Void) {
         var values: [String: Any] = [:]
         values["monthlyAnalysisId"] = 0
-        values["userId"] = user.userId
+        values["userId"] = userId
         values["budgetAmount"] = 0
         values["monthAndYear"] = transasction.date.dropLast(3)
         values["spentAmount"] = transasction.amount
@@ -26,7 +26,7 @@ extension AddMonthlyAnalysisTransactionDatabase: AddMonthlyAnalysisTransactionDa
         var spentAmount = 0
         var budgetAmount = 0
         var monthlyAnalysisId = 0
-        let result = database.getArrayData(tableName: "Budget", column: budgetDatabaseColumn, columnName: "userId", columnValue: user.userId)
+        let result = database.getArrayData(tableName: "Budget", column: budgetDatabaseColumn, columnName: "userId", columnValue: userId)
         for row in result {
             if row["monthAndYear"] as! String == transasction.date.dropLast(3) {
                 check = true

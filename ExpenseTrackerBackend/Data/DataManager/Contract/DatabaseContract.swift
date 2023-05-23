@@ -23,49 +23,49 @@ public protocol UpdateUserDatabaseContract {
 
 //---------------------------------- Tranasction Database contract -------------------------------------------
 public protocol GetAllTransactionDatabaseContract {
-    func getTransaction(user: User, success: @escaping ([Transaction]) -> Void, failure: @escaping (Error) -> Void)
+    func getTransaction(userId: Int, success: @escaping ([Transaction]) -> Void, failure: @escaping (Error) -> Void)
 }
 
 public protocol AddTransactionDatabaseContract {
     
-    func addTransaction(user: User, transaction: Transaction, success: @escaping (String) -> Void, failure: @escaping (Error) -> Void)
+    func addTransaction(userId: Int, transaction: Transaction, success: @escaping (String) -> Void, failure: @escaping (Error) -> Void)
 }
 
 public protocol UpdateTranasctionDatabaseContract {
     
-    func updateTransaction(user: User, transaction: Transaction, column: String, update: Any, success: @escaping (String) -> Void, failure: @escaping (Error) -> Void)
+    func updateTransaction(userId: Int, transaction: Transaction, column: String, update: Any, success: @escaping (String) -> Void, failure: @escaping (Error) -> Void)
 }
 
 public protocol DeleteTransactionDatabaseContract {
-    func deleteTransaction(user: User, transaction: Transaction, columnName: String, columnValue: Any, success: @escaping (String) -> Void, failure: @escaping (Error) -> Void)
+    func deleteTransaction(userId: Int, transaction: Transaction, columnName: String, columnValue: Any, success: @escaping (String) -> Void, failure: @escaping (Error) -> Void)
 }
 //------------------------------------------------------------------------------------------------------------
 
 //------------------------------------ Budget Database contract ----------------------------------------------
 public protocol AddBudgetDatabaseContract {
-    func addBudget(user: User, budget: Budget, success: @escaping (String) -> Void, failure: @escaping (Error) -> Void)
+    func addBudget(userId: Int, budget: Budget, success: @escaping (String) -> Void, failure: @escaping (Error) -> Void)
 }
 //------------------------------------------------------------------------------------------------------------
 
 //------------------------------------ MonthlyAnalysis Database contract --------------------------------------
 public protocol AddMonthlyAnalysisTransactionDatabaseContract {
-    func addMonthlyAnalysisTransaction(user: User, transasction: Transaction, success: @escaping (String) -> Void, failure: @escaping (Error) -> Void)
+    func addMonthlyAnalysisTransaction(userId: Int, transasction: Transaction, success: @escaping (String) -> Void, failure: @escaping (Error) -> Void)
 }
 //-------------------------------------------------------------------------------------------------------------
 
 //------------------------------------ Category Database contract --------------------------------------------
 public protocol GetCategoryDatabaseContract {
     
-    func getCategory(user: User, success: @escaping ([ExpendatureCategory]) -> Void, failure: @escaping (Error) -> Void)
+    func getCategory(userId: Int, success: @escaping ([ExpendatureCategory]) -> Void, failure: @escaping (Error) -> Void)
 }
 
 public protocol AddCategoryDatabaseContract {
     
-    func addCategory(user: User, category: ExpendatureCategory, success: @escaping (String) -> Void, failure: @escaping (Error) -> Void)
+    func addCategory(userId: Int, category: ExpendatureCategory, success: @escaping (String) -> Void, failure: @escaping (Error) -> Void)
 }
 //------------------------------------------------------------------------------------------------------------
 
 //---------------------------------- Analysis Database contract -------------------------------------------
 public protocol GetTransactionAnalysisDatabaseContract {
-    func getTransactionAnalysis(user: User, startDate: String, endDate: String, success: @escaping ([Transaction]) -> Void, failure: @escaping (Error) -> Void)
+    func getTransactionAnalysis(userId: Int, startDate: String, endDate: String, success: @escaping ([Transaction]) -> Void, failure: @escaping (Error) -> Void)
 }

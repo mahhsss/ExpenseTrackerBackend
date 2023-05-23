@@ -15,8 +15,8 @@ public class GetAllTransactionDatabase: TransactionDatabase {
 
 extension GetAllTransactionDatabase: GetAllTransactionDatabaseContract {
    
-    public func getTransaction(user: User, success: @escaping ([Transaction]) -> Void, failure: @escaping (Error) -> Void) {
-        let result = database.getArrayData(tableName: "\"Transaction\"", column: transactionDatabaseColumn, columnName: "userId", columnValue: user.userId)
+    public func getTransaction(userId: Int, success: @escaping ([Transaction]) -> Void, failure: @escaping (Error) -> Void) {
+        let result = database.getArrayData(tableName: "\"Transaction\"", column: transactionDatabaseColumn, columnName: "userId", columnValue: userId)
         var transactions: [Transaction] = []
         for row in result {
             var transactionType: TransactionType = .spending

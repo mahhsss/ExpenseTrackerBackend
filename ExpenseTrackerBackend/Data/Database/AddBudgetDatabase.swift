@@ -15,14 +15,14 @@ public class AddBudgetDatabaseService: BudgetDatabase {
 
 extension AddBudgetDatabaseService: AddBudgetDatabaseContract {
     
-    public func addBudget(user: User, budget: Budget, success: @escaping (String) -> Void, failure: @escaping (Error) -> Void) {
+    public func addBudget(userId: Int, budget: Budget, success: @escaping (String) -> Void, failure: @escaping (Error) -> Void) {
         var values: [String: Any] = [:]
         values["monthlyAnalysisId"] = 0
-        values["userId"] = user.userId
+        values["userId"] = userId
         values["budgetAmount"] = budget.budget
         values["monthAndYear"] = budget.month
         values["spentAmount"] = 0
-        let result = database.getArrayData(tableName: "Budget", column: budgetDatabaseColumn, columnName: "userId", columnValue: user.userId)
+        let result = database.getArrayData(tableName: "Budget", column: budgetDatabaseColumn, columnName: "userId", columnValue: userId)
         var check: Bool = false
         var monthlyAnalysisId = 0
         for row in result {

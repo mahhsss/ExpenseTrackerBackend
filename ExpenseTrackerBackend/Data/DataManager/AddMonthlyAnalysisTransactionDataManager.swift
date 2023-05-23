@@ -16,8 +16,8 @@ public class AddMonthlyAnalysisTransactionDataManager: AddMonthlyAnalysisTransac
         self.database = database
     }
     
-    public func addMonthlyAnalysisTransaction(user: User, transaction: Transaction, success: @escaping (String) -> Void, failure: @escaping (Error) -> Void) {
-        self.database.addMonthlyAnalysisTransaction(user: user, transasction: transaction) { [weak self] (response) in
+    public func addMonthlyAnalysisTransaction(userId: Int, transaction: Transaction, success: @escaping (String) -> Void, failure: @escaping (Error) -> Void) {
+        self.database.addMonthlyAnalysisTransaction(userId: userId, transasction: transaction) { [weak self] (response) in
             self?.success(callback: success, response: response)
         } failure: { [weak self] (error) in
             self?.failure(callback: failure, error: error)

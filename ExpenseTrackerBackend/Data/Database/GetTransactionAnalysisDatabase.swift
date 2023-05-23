@@ -16,8 +16,8 @@ public class GetTransactionAnalysisDatabase: TransactionDatabase {
 
 extension GetTransactionAnalysisDatabase: GetTransactionAnalysisDatabaseContract {
     
-    public func getTransactionAnalysis(user: User, startDate: String, endDate: String, success: @escaping ([Transaction]) -> Void, failure: @escaping (Error) -> Void) {
-        let result = database.getTransactionAnalysis(tableName: "\"Transaction\"", column: transactionDatabaseColumn, columnName: "date", columnValue1: startDate, columnValue2: endDate, userId: user.userId)
+    public func getTransactionAnalysis(userId: Int, startDate: String, endDate: String, success: @escaping ([Transaction]) -> Void, failure: @escaping (Error) -> Void) {
+        let result = database.getTransactionAnalysis(tableName: "\"Transaction\"", column: transactionDatabaseColumn, columnName: "date", columnValue1: startDate, columnValue2: endDate, userId: userId)
         var transactions: [Transaction] = []
         for row in result {
             var transactionType: TransactionType = .spending

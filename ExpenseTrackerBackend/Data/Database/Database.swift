@@ -46,7 +46,7 @@ public class Database {
                 Database.filepath = filePath.path()
                 if sqlite3_open(Database.filepath, &dbPointer) == SQLITE_OK {
                     if dbPointer != nil {
-                        print("            Opened DB \n")
+//                        print("            Opened DB \n")
                     }
                 }
                 
@@ -102,7 +102,7 @@ extension Database {
         
         let createTableStatement = prepareStatement(query: tableQuery)
         if sqlite3_step(createTableStatement) == SQLITE_DONE {
-            print("            Created Table \n")
+//            print("            Created Table \n")
         } else {
             print("Error in creating Table")
         }

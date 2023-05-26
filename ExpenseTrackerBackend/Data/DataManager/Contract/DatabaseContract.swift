@@ -39,6 +39,11 @@ public protocol UpdateTranasctionDatabaseContract {
 public protocol DeleteTransactionDatabaseContract {
     func deleteTransaction(userId: Int, transaction: Transaction, columnName: String, columnValue: Any, success: @escaping (String) -> Void, failure: @escaping (Error) -> Void)
 }
+
+public protocol GetMonthlySpentDatabaseContract {
+    
+    func getMonthlySpent(userId: Int, month: String, success: @escaping ([Transaction]) -> Void, failure: @escaping (Error) -> Void)
+}
 //------------------------------------------------------------------------------------------------------------
 
 //------------------------------------ Budget Database contract ----------------------------------------------

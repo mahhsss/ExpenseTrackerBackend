@@ -16,7 +16,7 @@ public class GetAllTransactionRequest: Request {
     }
 }
 
-public class GetAllTransactionResponse: ZResponse {
+public class GetAllTransactionResponse: Response {
     
     public var transactions: [Transaction]
     public init(transactions: [Transaction]) {

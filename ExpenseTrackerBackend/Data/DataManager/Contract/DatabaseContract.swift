@@ -44,6 +44,16 @@ public protocol GetMonthlySpentDatabaseContract {
     
     func getMonthlySpent(userId: Int, month: String, success: @escaping ([Transaction]) -> Void, failure: @escaping (Error) -> Void)
 }
+
+public protocol GetMonthlyIncomeDatabaseContract {
+    
+    func getmonthlyIncome(userId: Int, month: String, success: @escaping ([Transaction]) -> Void, failure: @escaping (Error) -> Void)
+}
+
+public protocol GetMonthlyBalanceDatabaseContract {
+    
+    func getMonthlyBalance(userId: Int, month: String, success: @escaping ([Transaction]) -> Void, failure: @escaping (Error) -> Void)
+}
 //------------------------------------------------------------------------------------------------------------
 
 //------------------------------------ Budget Database contract ----------------------------------------------

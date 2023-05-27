@@ -11,3 +11,13 @@ public protocol GetMonthlySpentDataProtocol {
     
     func getMonthlySpent(userId: Int, month: String, success: @escaping ([Transaction]) -> Void, failure: @escaping (Error) -> Void)
 }
+
+public protocol GetMonthlyIncomeDataProtocol {
+    
+    func getMonthlyIncome(userId: Int, month: String, success: @escaping ([Transaction]) -> Void, failure: @escaping (Error) -> Void)
+}
+
+public protocol GetMonthlyBalanceDataProtocol {
+    
+    func getMonthlyBalance(userId: Int, month: String, success: @escaping ([Transaction]) -> Void, failure: @escaping (Error) -> Void)
+}

@@ -24,6 +24,9 @@
 		2A5DCE152A21F480007586CF /* GetMonthlyBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5DCE142A21F480007586CF /* GetMonthlyBalance.swift */; };
 		2A5DCE172A21FA20007586CF /* GetMonthlyBalanceDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5DCE162A21FA20007586CF /* GetMonthlyBalanceDataManager.swift */; };
 		2A5DCE192A21FB94007586CF /* GetMonthlyBalanceDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5DCE182A21FB94007586CF /* GetMonthlyBalanceDatabase.swift */; };
+		2A5DCE232A24A546007586CF /* GetBudget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5DCE222A24A546007586CF /* GetBudget.swift */; };
+		2A5DCE252A24AB49007586CF /* GetBudgetDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5DCE242A24AB49007586CF /* GetBudgetDataManager.swift */; };
+		2A5DCE272A24AFB3007586CF /* GetBudgetDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5DCE262A24AFB3007586CF /* GetBudgetDatabase.swift */; };
 		2A7B9F4B29C040A200A9BFAE /* UpdateTransactionDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7B9F4A29C040A200A9BFAE /* UpdateTransactionDataManager.swift */; };
 		2A7B9F4D29C048CD00A9BFAE /* UpdateTransactionDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7B9F4C29C048CD00A9BFAE /* UpdateTransactionDatabase.swift */; };
 		2A7B9F5529C0688900A9BFAE /* UpdateUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7B9F5429C0688900A9BFAE /* UpdateUser.swift */; };
@@ -92,6 +95,9 @@
 		2A5DCE142A21F480007586CF /* GetMonthlyBalance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMonthlyBalance.swift; sourceTree = "<group>"; };
 		2A5DCE162A21FA20007586CF /* GetMonthlyBalanceDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMonthlyBalanceDataManager.swift; sourceTree = "<group>"; };
 		2A5DCE182A21FB94007586CF /* GetMonthlyBalanceDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMonthlyBalanceDatabase.swift; sourceTree = "<group>"; };
+		2A5DCE222A24A546007586CF /* GetBudget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBudget.swift; sourceTree = "<group>"; };
+		2A5DCE242A24AB49007586CF /* GetBudgetDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBudgetDataManager.swift; sourceTree = "<group>"; };
+		2A5DCE262A24AFB3007586CF /* GetBudgetDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBudgetDatabase.swift; sourceTree = "<group>"; };
 		2A7B9F4A29C040A200A9BFAE /* UpdateTransactionDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTransactionDataManager.swift; sourceTree = "<group>"; };
 		2A7B9F4C29C048CD00A9BFAE /* UpdateTransactionDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTransactionDatabase.swift; sourceTree = "<group>"; };
 		2A7B9F5429C0688900A9BFAE /* UpdateUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUser.swift; sourceTree = "<group>"; };
@@ -159,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				2A7B9F6D29C1922200A9BFAE /* AddBudget.swift */,
+				2A5DCE222A24A546007586CF /* GetBudget.swift */,
 			);
 			path = BudgetUsecase;
 			sourceTree = "<group>";
@@ -240,6 +247,7 @@
 				2A5DCE002A207EB5007586CF /* GetMothlySpentDatabase.swift */,
 				2A5DCE0E2A20BBEE007586CF /* GetMonthlyIncomeDatabase.swift */,
 				2A5DCE182A21FB94007586CF /* GetMonthlyBalanceDatabase.swift */,
+				2A5DCE262A24AFB3007586CF /* GetBudgetDatabase.swift */,
 				2AA2456B29A8A630007BBE2D /* Database.swift */,
 			);
 			path = Database;
@@ -263,6 +271,7 @@
 				2A5DCDFE2A1FD836007586CF /* GetMonthlySpentDataManager.swift */,
 				2A5DCE0C2A20BAD9007586CF /* GetMonthlyIncomeDataManager.swift */,
 				2A5DCE162A21FA20007586CF /* GetMonthlyBalanceDataManager.swift */,
+				2A5DCE242A24AB49007586CF /* GetBudgetDataManager.swift */,
 				2AA2457129A8A682007BBE2D /* Contract */,
 			);
 			path = DataManager;
@@ -512,11 +521,14 @@
 				2AADAFF629B1E54A00F7962D /* TransactionDataContract.swift in Sources */,
 				2A7B9F4B29C040A200A9BFAE /* UpdateTransactionDataManager.swift in Sources */,
 				2AA2458229A8A77A007BBE2D /* UserSignUp.swift in Sources */,
+				2A5DCE232A24A546007586CF /* GetBudget.swift in Sources */,
 				2A7B9F5529C0688900A9BFAE /* UpdateUser.swift in Sources */,
 				2AADAFEF29B0CC1200F7962D /* AddTransactionDatabase.swift in Sources */,
 				2A5DCE172A21FA20007586CF /* GetMonthlyBalanceDataManager.swift in Sources */,
+				2A5DCE252A24AB49007586CF /* GetBudgetDataManager.swift in Sources */,
 				2A7B9F4D29C048CD00A9BFAE /* UpdateTransactionDatabase.swift in Sources */,
 				2AADAFE329AF3C8A00F7962D /* GetUserDatabase.swift in Sources */,
+				2A5DCE272A24AFB3007586CF /* GetBudgetDatabase.swift in Sources */,
 				2AA2457029A8A661007BBE2D /* AddUserDatabase.swift in Sources */,
 				2AD9238D29ACC1F4009F206D /* AddTransaction.swift in Sources */,
 				2AADB00E29B6194000F7962D /* CategoryDatabase.swift in Sources */,

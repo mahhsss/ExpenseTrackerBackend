@@ -60,12 +60,13 @@ public class GetMonthlyBalance: ZUsecase<GetMonthlyBalanceRequest, GetMonthlyBal
                     spent += i.amount
                 }
                 balance = income - spent
-                if balance > 0 {
-                    self?.success(callback: success, response: balance)
-                }
-                else {
-                    self?.success(callback: success, response: 0)
-                }
+                
+            }
+            if balance > 0 {
+                self?.success(callback: success, response: balance)
+            }
+            else if balance <= 0{
+                self?.success(callback: success, response: 0)
             }
         } failure: { [weak self] (error) in
             self?.failure(callback: failure, error: error)

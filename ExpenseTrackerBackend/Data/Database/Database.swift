@@ -162,6 +162,30 @@ extension Database {
         return result
     }
     
+    func getData(tableName: String, column: [Column], columnName: String, columnValue: Int) -> [String: Any] {
+        var query = "SELECT * FROM " + tableName
+        if columnName != "" {
+            query += " WHERE " + columnName + " = \"" + "\(columnValue)" + "\""
+        }
+        var selectStatement: OpaquePointer?
+        var result: [String: Any] = [:]
+        if sqlite3_prepare(self.dbPointer, query, -1, &selectStatement, nil) == SQLITE_OK {
+            if sqlite3_step(selectStatement) == SQLITE_ROW {
+                for (index,col) in column.enumerated() {
+                    if col.type == "integer" {
+                        result[col.name] = Int(sqlite3_column_int(selectStatement, Int32(index)))
+                    }
+                    else if col.type == "text" || col.type == "datetime" {
+                        result[col.name] = String(cString: sqlite3_column_text(selectStatement, Int32(index))!)
+                    }
+                }
+            }
+            sqlite3_finalize(selectStatement)
+        }
+        return result
+    }
+    
+    
     func getArrayData(tableName: String, column: [Column], columnName: String?, columnValue: Int?) -> [[String: Any]] {
         var query = "SELECT * FROM " + tableName
         if let columnName = columnName {
@@ -192,6 +216,32 @@ extension Database {
         var query = "SELECT * FROM " + tableName
         if let columnName = columnName {
             query += " WHERE " + ("\"\(columnName)\"") + " > " + ("\"\(columnValue1!)\"") + " AND " + ("\"\(columnName)\"") + " < " + ("\"\(columnValue2!)\"") + " AND " + (" userId = ") + ("\"\(userId!)\"")
+        }
+        var selectStatement: OpaquePointer?
+        var result: [[String: Any]] = []
+        if sqlite3_prepare(self.dbPointer, query, -1, &selectStatement, nil) == SQLITE_OK {
+            while sqlite3_step(selectStatement) == SQLITE_ROW {
+                var rowValue: [String: Any] = [: ]
+                for (index,col) in column.enumerated() {
+                    if col.type == "integer" {
+                        rowValue[col.name] = Int(sqlite3_column_int(selectStatement, Int32(index)))
+                    }
+                    else if col.type == "text" || col.type == "datetime" {
+                        rowValue[col.name] = String(cString: sqlite3_column_text(selectStatement, Int32(index))!)
+                    }
+                }
+                result.append(rowValue)
+                
+            }
+            sqlite3_finalize(selectStatement)
+        }
+        return result
+    }
+    
+    func getBudgetAnalysis(tableName: String, column: [Column], columnName: String?, columnValue1: String?, userId: Int?) -> [[String: Any]] {
+        var query = "SELECT * FROM " + tableName
+        if let columnName = columnName {
+            query += " WHERE " + ("\"\(columnName)\"") + " = " + ("\"\(columnValue1!)\"") + " AND " + (" userId = ") + ("\"\(userId!)\"")
         }
         var selectStatement: OpaquePointer?
         var result: [[String: Any]] = []

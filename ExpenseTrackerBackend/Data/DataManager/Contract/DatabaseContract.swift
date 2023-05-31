@@ -22,6 +22,10 @@ public protocol UpdateUserDatabaseContract {
 //------------------------------------------------------------------------------------------------------------
 
 //---------------------------------- Tranasction Database contract -------------------------------------------
+public protocol GetRecentTransactionDatabaseContract {
+    func getRecentTransaction(userId: Int, month: String, success: @escaping ([Transaction]) -> Void, failure: @escaping (Error) -> Void)
+}
+
 public protocol GetAllTransactionDatabaseContract {
     func getTransaction(userId: Int, success: @escaping ([Transaction]) -> Void, failure: @escaping (Error) -> Void)
 }

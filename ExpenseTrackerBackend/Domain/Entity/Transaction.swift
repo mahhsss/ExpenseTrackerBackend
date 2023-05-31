@@ -19,14 +19,14 @@ public enum TransactionType: String {
 
 public struct Transaction {
     
-    var transactionId: Int
-    var userId: Int
-    var amount: Int
-    var transactionType: TransactionType
-    var currencyType: CurrencyType
-    var date: String
-    var category: String?
-    var note: String?
+    public var transactionId: Int
+    public var userId: Int
+    public var amount: Int
+    public var transactionType: TransactionType
+    public var currencyType: CurrencyType
+    public var date: String
+    public var category: String?
+    public var note: String?
     
     
     public init(transactionId: Int, userId: Int, amount: Int, transactionType: TransactionType, currencyType: CurrencyType, date: String, category: String? = nil, note: String? = nil) {

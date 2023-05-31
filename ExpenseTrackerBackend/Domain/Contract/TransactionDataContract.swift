@@ -7,6 +7,11 @@
 
 import Foundation
 
+public protocol GetRecentTransactionDataProtocol {
+    
+    func getRecentTransaction(userId: Int, month: String, success: @escaping ([Transaction]) -> Void, failure: @escaping (Error) -> Void)
+}
+
 public protocol GetAllTransactionDataProtocol {
     
     func getAllTransaction(userId: Int, success: @escaping ([Transaction]) -> Void, failure: @escaping (Error) -> Void)

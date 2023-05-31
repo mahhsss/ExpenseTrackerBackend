@@ -44,6 +44,9 @@
 		2A7B9F8229C1BD1B00A9BFAE /* AddMonthlyAnalysisTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7B9F8129C1BD1B00A9BFAE /* AddMonthlyAnalysisTransaction.swift */; };
 		2A7B9F8429C1BE8300A9BFAE /* AddMonthlyAnalysisTransactionDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7B9F8329C1BE8300A9BFAE /* AddMonthlyAnalysisTransactionDataManager.swift */; };
 		2A7B9F8629C1BF5F00A9BFAE /* AddMonthlyAnalysisTransactionDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7B9F8529C1BF5F00A9BFAE /* AddMonthlyAnalysisTransactionDatabase.swift */; };
+		2A961EFA2A27113800F653BD /* GetRecentTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A961EF92A27113800F653BD /* GetRecentTransaction.swift */; };
+		2A961EFC2A2713C800F653BD /* GetRecentTransactionDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A961EFB2A2713C800F653BD /* GetRecentTransactionDataManager.swift */; };
+		2A961EFE2A2714F800F653BD /* GetRecentTranasctionDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A961EFD2A2714F800F653BD /* GetRecentTranasctionDatabase.swift */; };
 		2AA2454A29A8A2F4007BBE2D /* ExpenseTrackerBackend.h in Headers */ = {isa = PBXBuildFile; fileRef = 2AA2454929A8A2F4007BBE2D /* ExpenseTrackerBackend.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2AA2456C29A8A630007BBE2D /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA2456B29A8A630007BBE2D /* Database.swift */; };
 		2AA2456E29A8A657007BBE2D /* UserDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA2456D29A8A657007BBE2D /* UserDatabase.swift */; };
@@ -115,6 +118,9 @@
 		2A7B9F8129C1BD1B00A9BFAE /* AddMonthlyAnalysisTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMonthlyAnalysisTransaction.swift; sourceTree = "<group>"; };
 		2A7B9F8329C1BE8300A9BFAE /* AddMonthlyAnalysisTransactionDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMonthlyAnalysisTransactionDataManager.swift; sourceTree = "<group>"; };
 		2A7B9F8529C1BF5F00A9BFAE /* AddMonthlyAnalysisTransactionDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMonthlyAnalysisTransactionDatabase.swift; sourceTree = "<group>"; };
+		2A961EF92A27113800F653BD /* GetRecentTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRecentTransaction.swift; sourceTree = "<group>"; };
+		2A961EFB2A2713C800F653BD /* GetRecentTransactionDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRecentTransactionDataManager.swift; sourceTree = "<group>"; };
+		2A961EFD2A2714F800F653BD /* GetRecentTranasctionDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRecentTranasctionDatabase.swift; sourceTree = "<group>"; };
 		2AA2454629A8A2F4007BBE2D /* ExpenseTrackerBackend.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ExpenseTrackerBackend.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AA2454929A8A2F4007BBE2D /* ExpenseTrackerBackend.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExpenseTrackerBackend.h; sourceTree = "<group>"; };
 		2AA2456B29A8A630007BBE2D /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
@@ -249,6 +255,7 @@
 				2A5DCE182A21FB94007586CF /* GetMonthlyBalanceDatabase.swift */,
 				2A5DCE262A24AFB3007586CF /* GetBudgetDatabase.swift */,
 				2AA2456B29A8A630007BBE2D /* Database.swift */,
+				2A961EFD2A2714F800F653BD /* GetRecentTranasctionDatabase.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -272,6 +279,7 @@
 				2A5DCE0C2A20BAD9007586CF /* GetMonthlyIncomeDataManager.swift */,
 				2A5DCE162A21FA20007586CF /* GetMonthlyBalanceDataManager.swift */,
 				2A5DCE242A24AB49007586CF /* GetBudgetDataManager.swift */,
+				2A961EFB2A2713C800F653BD /* GetRecentTransactionDataManager.swift */,
 				2AA2457129A8A682007BBE2D /* Contract */,
 			);
 			path = DataManager;
@@ -343,6 +351,7 @@
 				2A5DCDFA2A1FC27B007586CF /* GetMonthlySpent.swift */,
 				2A5DCE0A2A20B771007586CF /* GetMonthlyIncome.swift */,
 				2A5DCE142A21F480007586CF /* GetMonthlyBalance.swift */,
+				2A961EF92A27113800F653BD /* GetRecentTransaction.swift */,
 			);
 			path = TransactionUsecase;
 			sourceTree = "<group>";
@@ -501,6 +510,7 @@
 				2A5DCE192A21FB94007586CF /* GetMonthlyBalanceDatabase.swift in Sources */,
 				2A16149229BB0F60005E999E /* GetTransactionAnalysisDataManager.swift in Sources */,
 				2A5DCE012A207EB5007586CF /* GetMothlySpentDatabase.swift in Sources */,
+				2A961EFE2A2714F800F653BD /* GetRecentTranasctionDatabase.swift in Sources */,
 				2AD923A729ACC33D009F206D /* GetCategory.swift in Sources */,
 				2A7B9F5729C06C2600A9BFAE /* UpdateUserDataManager.swift in Sources */,
 				2A7B9F5D29C09D9300A9BFAE /* DeleteTransaction.swift in Sources */,
@@ -525,6 +535,7 @@
 				2A7B9F5529C0688900A9BFAE /* UpdateUser.swift in Sources */,
 				2AADAFEF29B0CC1200F7962D /* AddTransactionDatabase.swift in Sources */,
 				2A5DCE172A21FA20007586CF /* GetMonthlyBalanceDataManager.swift in Sources */,
+				2A961EFC2A2713C800F653BD /* GetRecentTransactionDataManager.swift in Sources */,
 				2A5DCE252A24AB49007586CF /* GetBudgetDataManager.swift in Sources */,
 				2A7B9F4D29C048CD00A9BFAE /* UpdateTransactionDatabase.swift in Sources */,
 				2AADAFE329AF3C8A00F7962D /* GetUserDatabase.swift in Sources */,
@@ -550,6 +561,7 @@
 				2AA2457E29A8A744007BBE2D /* User.swift in Sources */,
 				2AA2458D29ACAF88007BBE2D /* ExpendatureCategory.swift in Sources */,
 				2A7B9F8629C1BF5F00A9BFAE /* AddMonthlyAnalysisTransactionDatabase.swift in Sources */,
+				2A961EFA2A27113800F653BD /* GetRecentTransaction.swift in Sources */,
 				2A5DCDFB2A1FC27B007586CF /* GetMonthlySpent.swift in Sources */,
 				2A7B9F7429C1949800A9BFAE /* AddBudgetDataManager.swift in Sources */,
 				2AADAFF329B1DE6700F7962D /* AddTransactionDataManager.swift in Sources */,

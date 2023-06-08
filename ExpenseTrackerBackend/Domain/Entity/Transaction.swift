@@ -17,6 +17,18 @@ public enum TransactionType: String {
     case income = "Income"
 }
 
+public enum transactionCategory: String {
+    case food = "Food"
+    case travel = "Travel"
+    case shopping = "Shopping"
+    case fuel = "Fuel"
+    case games = "Games"
+    case grocery = "Grocery"
+    case entertainment = "Entertainment"
+    case bills = "Bills"
+    case other = "Others"
+}
+
 public struct Transaction {
     
     public var transactionId: Int

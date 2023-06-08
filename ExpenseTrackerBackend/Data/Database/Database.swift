@@ -58,7 +58,6 @@ public class Database {
     }
     
     deinit {
-        print("Closing DB")
         sqlite3_close_v2(dbPointer)
     }
     

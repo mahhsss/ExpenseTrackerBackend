@@ -254,8 +254,8 @@
 				2A5DCE0E2A20BBEE007586CF /* GetMonthlyIncomeDatabase.swift */,
 				2A5DCE182A21FB94007586CF /* GetMonthlyBalanceDatabase.swift */,
 				2A5DCE262A24AFB3007586CF /* GetBudgetDatabase.swift */,
-				2AA2456B29A8A630007BBE2D /* Database.swift */,
 				2A961EFD2A2714F800F653BD /* GetRecentTranasctionDatabase.swift */,
+				2AA2456B29A8A630007BBE2D /* Database.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";

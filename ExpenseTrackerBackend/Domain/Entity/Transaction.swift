@@ -7,17 +7,17 @@
 
 import Foundation
 
-public enum CurrencyType: String {
+public enum CurrencyType: String, CaseIterable {
     case cash = "Cash"
     case bankTransaction = "Bank"
 }
 
-public enum TransactionType: String {
+public enum TransactionType: String, CaseIterable {
     case spending = "Spending"
     case income = "Income"
 }
 
-public enum transactionCategory: String {
+public enum TransactionCategory: String, CaseIterable {
     case food = "Food"
     case travel = "Travel"
     case shopping = "Shopping"

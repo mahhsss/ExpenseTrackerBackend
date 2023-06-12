@@ -37,6 +37,6 @@ public class BudgetDatabase {
         }
         
         database = Database()
-        database.createTable(tableName: "Budget", columns: budgetDatabaseColumn, constraint: ", constraint user_budget unique(userId,monthAndYear)")
+        database.createTable(tableName: "Budget", columns: budgetDatabaseColumn)
     }
 }

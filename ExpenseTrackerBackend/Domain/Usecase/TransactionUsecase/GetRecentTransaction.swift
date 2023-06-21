@@ -48,7 +48,8 @@ public class GetRecentTransaction: ZUsecase<GetRecentTransactionRequest, GetRece
     
     public override func run(request: GetRecentTransactionRequest, success: @escaping (GetRecentTransactionResponse) -> Void, failure: @escaping (GetRecentTransactionError) -> Void) {
         self.dataManager.getRecentTransaction(userId: request.userId, month: request.month) { [weak self] (response) in
-            self?.success(callback: success, response: response)
+            let transactions = Array(response.reversed())
+            self?.success(callback: success, response: transactions)
         } failure: { [weak self] (error) in
             self?.failure(callback: failure, error: error)
         }

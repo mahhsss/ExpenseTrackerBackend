@@ -40,8 +40,8 @@ public class UserLoginError: ZError {
 public class UserLogin: ZUsecase<UserLoginRequest, UserLoginResponse, UserLoginError> {
     
     var dataManager: UserLoginDataContract
-    var response: UserLoginResponse?
-    var error: UserLoginError?
+//    var response: UserLoginResponse?
+//    var error: UserLoginError?
     public init(dataManager: UserLoginDataContract) {
         self.dataManager = dataManager
     }
@@ -56,8 +56,8 @@ public class UserLogin: ZUsecase<UserLoginRequest, UserLoginResponse, UserLoginE
     }
     
     public func success(callBack: @escaping (UserLoginResponse) -> Void, response: User) {
-        self.response = UserLoginResponse(user: response)
-        invokeSuccess(callback: callBack, response: self.response!)
+//        self.response = UserLoginResponse(user: response)
+        invokeSuccess(callback: callBack, response: UserLoginResponse(user: response))
     }
     
     public func failure(callBack: @escaping (UserLoginError) -> Void, error: Error) {

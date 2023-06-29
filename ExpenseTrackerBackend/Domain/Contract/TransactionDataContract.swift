@@ -19,7 +19,7 @@ public protocol GetAllTransactionDataProtocol {
 
 public protocol AddTransactionDataContract {
     
-    func addTransaction(userId: Int, transaction: Transaction, success: @escaping (String) -> Void, failure: @escaping (Error) -> Void)
+    func addTransaction(userId: Int, transaction: Transaction, success: @escaping (Int) -> Void, failure: @escaping (Error) -> Void)
 }
 
 public protocol UpdateTransactionDataContract {
@@ -29,7 +29,7 @@ public protocol UpdateTransactionDataContract {
 
 public protocol DeleteTransactionDataContract {
     
-    func deleteTransaction(userId: Int, transaction: Transaction, columnName: String, columnValue: Any, success: @escaping (String) -> Void, failure: @escaping (Error) -> Void)
+    func deleteTransaction(transactionId: Int, success: @escaping (String) -> Void, failure: @escaping (Error) -> Void)
 }
 
 public protocol AddMonthlyAnalysisTransactionDataContract {

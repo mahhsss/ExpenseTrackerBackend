@@ -16,8 +16,8 @@ public class DeleteTransactionDataManager: DeleteTransactionDataContract {
         self.database = database
     }
     
-    public func deleteTransaction(userId: Int, transaction: Transaction, columnName: String, columnValue: Any, success: @escaping (String) -> Void, failure: @escaping (Error) -> Void) {
-        self.database.deleteTransaction(userId: userId, transaction: transaction, columnName: columnName, columnValue: columnValue) { [weak self] (response) in
+    public func deleteTransaction(transactionId: Int, success: @escaping (String) -> Void, failure: @escaping (Error) -> Void) {
+        self.database.deleteTransaction(transactionId: transactionId) { [weak self] (response) in
             self?.success(callback: success, response: response)
         } failure: { [weak self] (error) in
             self?.failure(callback: failure, error: error)

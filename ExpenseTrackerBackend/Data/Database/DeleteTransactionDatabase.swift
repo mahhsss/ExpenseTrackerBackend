@@ -16,8 +16,8 @@ public class DeleteTransactionDatabaseService: TransactionDatabase {
 
 extension DeleteTransactionDatabaseService: DeleteTransactionDatabaseContract {
  
-    public func deleteTransaction(userId: Int, transaction: Transaction, columnName: String, columnValue: Any, success: @escaping (String) -> Void, failure: @escaping (Error) -> Void) {
-        let result = database.deleteValue(tableName: "\"Transaction\"", columnName: columnName, columnValue: columnValue)
+    public func deleteTransaction(transactionId: Int, success: @escaping (String) -> Void, failure: @escaping (Error) -> Void) {
+        let result = database.deleteValue(tableName: "\"Transaction\"", columnName: "transactionId", columnValue: transactionId)
         if result {
             success("Value Deleted Successfully")
         }

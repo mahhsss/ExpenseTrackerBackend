@@ -32,7 +32,7 @@ public protocol GetAllTransactionDatabaseContract {
 
 public protocol AddTransactionDatabaseContract {
     
-    func addTransaction(userId: Int, transaction: Transaction, success: @escaping (String) -> Void, failure: @escaping (Error) -> Void)
+    func addTransaction(userId: Int, transaction: Transaction, success: @escaping (Int) -> Void, failure: @escaping (Error) -> Void)
 }
 
 public protocol UpdateTranasctionDatabaseContract {
@@ -41,7 +41,7 @@ public protocol UpdateTranasctionDatabaseContract {
 }
 
 public protocol DeleteTransactionDatabaseContract {
-    func deleteTransaction(userId: Int, transaction: Transaction, columnName: String, columnValue: Any, success: @escaping (String) -> Void, failure: @escaping (Error) -> Void)
+    func deleteTransaction(transactionId: Int, success: @escaping (String) -> Void, failure: @escaping (Error) -> Void)
 }
 
 public protocol GetMonthlySpentDatabaseContract {

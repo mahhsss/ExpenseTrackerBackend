@@ -15,7 +15,7 @@ public class AddTransactionDataDatabaseService: TransactionDatabase {
 
 extension AddTransactionDataDatabaseService:  AddTransactionDatabaseContract{
     
-    public func addTransaction(userId: Int, transaction: Transaction, success: @escaping (String) -> Void, failure: @escaping (Error) -> Void) {
+    public func addTransaction(userId: Int, transaction: Transaction, success: @escaping (Int) -> Void, failure: @escaping (Error) -> Void) {
         
         var value: [String: Any] = [:]
         value["transactionId"] = transaction.transactionId
@@ -40,7 +40,7 @@ extension AddTransactionDataDatabaseService:  AddTransactionDatabaseContract{
         let result = database.addValue(tableName: "\"Transaction\"", columns: transactionDatabaseColumn, values: value)
         
         if result {
-            success("values Added Successfully")
+            success(database.executeQuery(query: "SELECT last_insert_rowid();"))
         }
         else {
             failure(ZErrorType.unknownError)

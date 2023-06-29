@@ -138,6 +138,16 @@ extension Database {
         }
     }
     
+    func executeQuery(query: String) -> Int {
+        var selectStatement: OpaquePointer?
+        if sqlite3_prepare(self.dbPointer, query, -1, &selectStatement, nil) == SQLITE_OK {
+            if sqlite3_step(selectStatement) == SQLITE_ROW {
+                return(Int(sqlite3_column_int(selectStatement, 0)))
+            }
+        }
+        return 0
+    }
+    
     func getData(tableName: String, column: [Column], columnName: String, columnValue: String) -> [String: Any] {
         var query = "SELECT * FROM " + tableName
         if columnName != "" {

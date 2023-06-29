@@ -20,9 +20,9 @@ public class AddNewTransactionRequest: Request {
 
 public class AddNewTransactionResponse: ZResponse {
     
-    public let message : String
-    init(message: String) {
-        self.message = message
+    public let transactionId : Int
+    init(transactionId: Int) {
+        self.transactionId = transactionId
     }
 }
 
@@ -52,8 +52,8 @@ public class AddNewTransaction: ZUsecase<AddNewTransactionRequest, AddNewTransac
 
     }
     
-    private func success(callback: @escaping (AddNewTransactionResponse) -> Void, response: String) {
-        invokeSuccess(callback: callback, response: AddNewTransactionResponse(message: response))
+    private func success(callback: @escaping (AddNewTransactionResponse) -> Void, response: Int) {
+        invokeSuccess(callback: callback, response: AddNewTransactionResponse(transactionId: response))
     }
     
     private func failure(callback: @escaping (AddNewTransactionError) -> Void, error: Error) {

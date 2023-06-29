@@ -10,15 +10,9 @@ import VTComponents
 
 public class DeleteTransactionRequest: Request {
     
-    var userId: Int
-    var transaction: Transaction
-    var columnName: String
-    var columnValue: Any
-    public init(userId: Int, transaction: Transaction, columnName: String, columnValue: Any) {
-        self.userId = userId
-        self.transaction = transaction
-        self.columnName = columnName
-        self.columnValue = columnValue
+    var transactionId: Int
+    public init(transactionId: Int) {
+        self.transactionId = transactionId
     }
 }
 
@@ -47,7 +41,7 @@ public class DeleteTransaction: ZUsecase<DeleteTransactionRequest, DeleteTransac
         self.dataManager = dataManager
     }
     public override func run(request: DeleteTransactionRequest, success: @escaping (DeleteTransactionResponse) -> Void, failure: @escaping (DeleteTransactionError) -> Void) {
-        dataManager.deleteTransaction(userId: request.userId, transaction: request.transaction, columnName: request.columnName, columnValue: request.columnValue) { [weak self] (response) in
+        dataManager.deleteTransaction(transactionId: request.transactionId) { [weak self] (response) in
             self?.success(callback: success, response: response)
         } failure: { [weak self] (error) in
             self?.failure(callback: failure, error: error)
